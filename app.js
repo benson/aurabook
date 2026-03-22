@@ -119,7 +119,7 @@ function renderGrid(filter = '') {
     <div class="aura-card" data-id="${a.id}">
       ${a.heroImage
         ? `<img class="aura-card-image" src="${imageUrl(a.heroImage)}" alt="${a.name}" loading="lazy">`
-        : `<div class="aura-card-placeholder">no image</div>`
+        : `<div class="aura-card-placeholder"${a.primaryColor ? ` style="background:${a.primaryColor}"` : ''}></div>`
       }
       <div class="aura-card-name">${a.name}</div>
       <div class="aura-card-tags">${(a.tags || []).map(t => `<span class="tag" data-tag="${t}">${t}</span>`).join('')}</div>
