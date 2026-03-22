@@ -7,6 +7,7 @@ let editingAura = null;
 let editorImages = [];
 let editorHeroImage = null;
 let editorLinks = [];
+let editorColors = [];
 
 // elements
 const gridView = document.getElementById('grid-view');
@@ -29,6 +30,8 @@ const editorImageUpload = document.getElementById('editor-image-upload');
 const editorImageGrid = document.getElementById('editor-image-grid');
 const editorLinkList = document.getElementById('editor-link-list');
 const addLinkBtn = document.getElementById('add-link-btn');
+const editorColorList = document.getElementById('editor-color-list');
+const addColorBtn = document.getElementById('add-color-btn');
 
 // helpers
 
@@ -154,6 +157,17 @@ async function openDetail(id) {
     html += `</div>`;
   }
 
+  if (currentAura.colors && currentAura.colors.length > 0) {
+    html += `<div class="detail-section-title">palette</div>`;
+    html += `<div class="detail-palette">`;
+    for (const c of currentAura.colors) {
+      html += `<div class="palette-swatch" style="background:${escapeHtml(c.hex)}" title="${escapeHtml(c.hex)} — ${escapeHtml(c.name || '')}">`;
+      html += `<span class="palette-label">${escapeHtml(c.name || c.hex)}</span>`;
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+
   if (currentAura.links && currentAura.links.length > 0) {
     html += `<div class="detail-links"><div class="detail-section-title">links</div>`;
     for (const link of currentAura.links) {
@@ -196,8 +210,10 @@ function openEditor(aura) {
   editorImages = aura ? [...(aura.images || [])] : [];
   editorHeroImage = aura ? aura.heroImage || null : null;
   editorLinks = aura ? [...(aura.links || [])] : [];
+  editorColors = aura ? (aura.colors || []).map(c => ({...c})) : [];
   renderEditorImages();
   renderEditorLinks();
+  renderEditorColors();
   showView(editorView);
 }
 
@@ -252,6 +268,43 @@ function renderEditorLinks() {
   });
 }
 
+function renderEditorColors() {
+  editorColorList.innerHTML = editorColors.map((c, i) => `
+    <div class="editor-color-row" data-index="${i}">
+      <input type="color" value="${escapeAttr(c.hex)}" data-field="hex">
+      <input type="text" placeholder="#hex" value="${escapeAttr(c.hex)}" data-field="hex-text" style="width:80px">
+      <input type="text" placeholder="name" value="${escapeAttr(c.name)}" data-field="name">
+      <button type="button" class="text-btn" data-remove="${i}">[x]</button>
+    </div>
+  `).join('');
+
+  editorColorList.querySelectorAll('.editor-color-row').forEach(row => {
+    const idx = parseInt(row.dataset.index);
+    const colorInput = row.querySelector('[data-field="hex"]');
+    const hexText = row.querySelector('[data-field="hex-text"]');
+    const nameInput = row.querySelector('[data-field="name"]');
+
+    colorInput.addEventListener('input', () => {
+      editorColors[idx].hex = colorInput.value;
+      hexText.value = colorInput.value;
+    });
+    hexText.addEventListener('input', () => {
+      editorColors[idx].hex = hexText.value;
+      if (/^#[0-9a-fA-F]{6}$/.test(hexText.value)) colorInput.value = hexText.value;
+    });
+    nameInput.addEventListener('input', () => {
+      editorColors[idx].name = nameInput.value;
+    });
+  });
+
+  editorColorList.querySelectorAll('[data-remove]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      editorColors.splice(parseInt(btn.dataset.remove), 1);
+      renderEditorColors();
+    });
+  });
+}
+
 async function handleSave() {
   const name = editorName.value.trim();
   if (!name) return alert('name is required');
@@ -264,6 +317,7 @@ async function handleSave() {
     heroImage: editorHeroImage,
     images: editorImages,
     links: editorLinks.filter(l => l.url.trim()),
+    colors: editorColors.filter(c => c.hex.trim()),
     notes: editorNotes.value.trim(),
   };
 
@@ -312,6 +366,11 @@ editorSave.addEventListener('click', handleSave);
 addLinkBtn.addEventListener('click', () => {
   editorLinks.push({ url: '', label: '' });
   renderEditorLinks();
+});
+
+addColorBtn.addEventListener('click', () => {
+  editorColors.push({ hex: '#888888', name: '' });
+  renderEditorColors();
 });
 
 editorImageUpload.addEventListener('change', async (e) => {
