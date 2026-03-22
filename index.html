@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aurabook</title>
+  <meta name="description" content="curated aesthetic reference library">
+  <meta property="og:title" content="aurabook">
+  <meta property="og:description" content="curated aesthetic reference library">
+  <meta property="og:url" content="https://bensonperry.com/aurabook">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://bensonperry.com/shared/common.css">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <div>
+          <h1>aurabook</h1>
+          <p class="subtitle">aesthetic reference library</p>
+        </div>
+        <div class="header-actions">
+          <button type="button" id="add-aura-btn" class="text-btn admin-only hidden">[+ add aura]</button>
+          <button type="button" id="auth-btn" class="text-btn">[login]</button>
+        </div>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="search auras...">
+      </div>
+    </header>
+
+    <!-- Browse Grid -->
+    <section id="grid-view">
+      <div id="aura-grid" class="aura-grid"></div>
+      <p id="empty-state" class="empty-state hidden">no auras yet</p>
+    </section>
+
+    <!-- Detail View -->
+    <section id="detail-view" class="hidden">
+      <div class="detail-header">
+        <button type="button" id="back-btn" class="text-btn">[&larr; back]</button>
+        <button type="button" id="edit-aura-btn" class="text-btn admin-only hidden">[edit]</button>
+      </div>
+      <div id="detail-content"></div>
+    </section>
+
+    <!-- Editor Panel -->
+    <section id="editor-view" class="hidden">
+      <div class="editor-header">
+        <button type="button" id="editor-cancel" class="text-btn">[cancel]</button>
+        <button type="button" id="editor-save" class="text-btn">[save]</button>
+      </div>
+      <form id="editor-form" class="editor-form">
+        <label>
+          name
+          <input type="text" id="editor-name" required>
+        </label>
+        <label>
+          description
+          <textarea id="editor-description" rows="6"></textarea>
+        </label>
+        <label>
+          tags (comma-separated)
+          <input type="text" id="editor-tags" placeholder="glossy, nature, optimistic">
+        </label>
+        <div class="editor-images">
+          <div class="editor-images-header">
+            <span>images</span>
+            <label class="text-btn upload-btn">
+              [+ upload]
+              <input type="file" id="editor-image-upload" accept="image/*" hidden>
+            </label>
+          </div>
+          <p class="hint">click an image to set as hero</p>
+          <div id="editor-image-grid" class="editor-image-grid"></div>
+        </div>
+        <div class="editor-links">
+          <div class="editor-links-header">
+            <span>links</span>
+            <button type="button" id="add-link-btn" class="text-btn">[+ add]</button>
+          </div>
+          <div id="editor-link-list"></div>
+        </div>
+        <label>
+          notes
+          <textarea id="editor-notes" rows="4"></textarea>
+        </label>
+      </form>
+    </section>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <h3>admin login</h3>
+        <input type="password" id="auth-key-input" placeholder="admin key">
+        <div class="modal-actions">
+          <button type="button" id="auth-cancel" class="text-btn">[cancel]</button>
+          <button type="button" id="auth-submit" class="text-btn">[login]</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
