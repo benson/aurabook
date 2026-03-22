@@ -161,8 +161,11 @@ async function openDetail(id) {
     html += `<div class="detail-section-title">palette</div>`;
     html += `<div class="detail-palette">`;
     for (const c of currentAura.colors) {
-      html += `<div class="palette-swatch" style="background:${escapeHtml(c.hex)}" title="${escapeHtml(c.hex)} — ${escapeHtml(c.name || '')}">`;
-      html += `<span class="palette-label">${escapeHtml(c.name || c.hex)}</span>`;
+      const hex = escapeHtml(c.hex);
+      const name = escapeHtml(c.name || '');
+      html += `<div class="palette-swatch" style="background:${hex}" data-hex="${hex}">`;
+      html += `<span class="palette-name">${name}</span>`;
+      html += `<span class="palette-hex">${hex}</span>`;
       html += `</div>`;
     }
     html += `</div>`;
@@ -185,6 +188,17 @@ async function openDetail(id) {
 
   detailContent.innerHTML = html;
   showView(detailView);
+
+  detailContent.querySelectorAll('.palette-swatch').forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      const hex = swatch.dataset.hex;
+      navigator.clipboard.writeText(hex).then(() => {
+        const hexEl = swatch.querySelector('.palette-hex');
+        hexEl.textContent = 'copied!';
+        setTimeout(() => { hexEl.textContent = hex; }, 1000);
+      });
+    });
+  });
 
   document.getElementById('delete-aura-btn').addEventListener('click', async () => {
     if (!confirm('delete this aura?')) return;
