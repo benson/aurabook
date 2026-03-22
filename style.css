@@ -141,9 +141,30 @@ h1 {
 }
 
 .aura-card-tags {
-  margin-top: 4px;
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  font-size: 0.7rem;
   color: var(--text-faint);
-  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.tag:hover {
+  color: var(--text);
+}
+
+.aura-card-tags .tag::after {
+  content: " ·";
+  color: var(--border-light);
+}
+
+.aura-card-tags .tag:last-child::after {
+  content: "";
 }
 
 .empty-state {
@@ -168,13 +189,24 @@ h1 {
 }
 
 .detail-tags {
-  color: var(--text-faint);
-  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-bottom: 24px;
 }
 
-.detail-tags span {
-  margin-right: 8px;
+.detail-tags .tag {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  border: 1px solid var(--border-light);
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.detail-tags .tag:hover {
+  color: var(--text);
+  border-color: var(--border);
 }
 
 .detail-description {
@@ -219,40 +251,48 @@ h1 {
   overflow: hidden;
 }
 
-.palette-swatch {
+.palette-item {
   flex: 1;
   min-width: 0;
-  padding: 16px 6px 10px;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 2px;
   transition: opacity 0.15s;
 }
 
-.palette-swatch:hover {
+.palette-item:hover {
   opacity: 0.85;
 }
 
-.palette-name {
-  font-size: 0.65rem;
+.palette-color {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.palette-info {
+  padding: 6px 4px;
+  background: var(--bg);
+  border-top: 1px solid var(--border-faint);
   text-align: center;
-  line-height: 1.2;
-  color: rgba(255,255,255,0.8);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.palette-name {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  line-height: 1.3;
   text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .palette-hex {
+  display: block;
   font-size: 0.65rem;
-  text-align: center;
-  line-height: 1.2;
-  color: rgba(255,255,255,0.95);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   font-family: monospace;
+  color: var(--text-faint);
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  line-height: 1.3;
 }
 
 .detail-links {

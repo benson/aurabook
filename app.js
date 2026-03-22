@@ -122,12 +122,23 @@ function renderGrid(filter = '') {
         : `<div class="aura-card-placeholder">no image</div>`
       }
       <div class="aura-card-name">${a.name}</div>
-      <div class="aura-card-tags">${(a.tags || []).join(' · ')}</div>
+      <div class="aura-card-tags">${(a.tags || []).map(t => `<span class="tag" data-tag="${t}">${t}</span>`).join('')}</div>
     </div>
   `).join('');
 
   auraGrid.querySelectorAll('.aura-card').forEach(card => {
-    card.addEventListener('click', () => navigate(card.dataset.id));
+    card.addEventListener('click', (e) => {
+      if (e.target.classList.contains('tag')) return;
+      navigate(card.dataset.id);
+    });
+  });
+
+  auraGrid.querySelectorAll('.tag').forEach(tag => {
+    tag.addEventListener('click', (e) => {
+      e.stopPropagation();
+      searchInput.value = tag.dataset.tag;
+      renderGrid(tag.dataset.tag);
+    });
   });
 }
 
@@ -142,7 +153,7 @@ async function openDetail(id) {
 
   let html = `
     <h2 class="detail-name">${currentAura.name}</h2>
-    <div class="detail-tags">${(currentAura.tags || []).map(t => `<span>${t}</span>`).join(' · ')}</div>
+    <div class="detail-tags">${(currentAura.tags || []).map(t => `<span class="tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`).join('')}</div>
   `;
 
   if (currentAura.description) {
@@ -163,10 +174,12 @@ async function openDetail(id) {
     for (const c of currentAura.colors) {
       const hex = escapeHtml(c.hex);
       const name = escapeHtml(c.name || '');
-      html += `<div class="palette-swatch" style="background:${hex}" data-hex="${hex}">`;
+      html += `<div class="palette-item" data-hex="${hex}">`;
+      html += `<div class="palette-color" style="background:${hex}"></div>`;
+      html += `<div class="palette-info">`;
       html += `<span class="palette-name">${name}</span>`;
       html += `<span class="palette-hex">${hex}</span>`;
-      html += `</div>`;
+      html += `</div></div>`;
     }
     html += `</div>`;
   }
@@ -189,14 +202,23 @@ async function openDetail(id) {
   detailContent.innerHTML = html;
   showView(detailView);
 
-  detailContent.querySelectorAll('.palette-swatch').forEach(swatch => {
-    swatch.addEventListener('click', () => {
-      const hex = swatch.dataset.hex;
+  detailContent.querySelectorAll('.palette-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const hex = item.dataset.hex;
       navigator.clipboard.writeText(hex).then(() => {
-        const hexEl = swatch.querySelector('.palette-hex');
+        const hexEl = item.querySelector('.palette-hex');
         hexEl.textContent = 'copied!';
         setTimeout(() => { hexEl.textContent = hex; }, 1000);
       });
+    });
+  });
+
+  detailContent.querySelectorAll('.tag').forEach(tag => {
+    tag.addEventListener('click', (e) => {
+      e.stopPropagation();
+      searchInput.value = tag.dataset.tag;
+      renderGrid(tag.dataset.tag);
+      navigate(null);
     });
   });
 
