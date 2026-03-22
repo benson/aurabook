@@ -127,7 +127,7 @@ function renderGrid(filter = '') {
   `).join('');
 
   auraGrid.querySelectorAll('.aura-card').forEach(card => {
-    card.addEventListener('click', () => openDetail(card.dataset.id));
+    card.addEventListener('click', () => navigate(card.dataset.id));
   });
 }
 
@@ -192,7 +192,7 @@ async function openDetail(id) {
       await deleteAura(currentAura.id);
       auras = auras.filter(a => a.id !== currentAura.id);
       renderGrid();
-      showView(gridView);
+      navigate(null);
     } catch (e) {
       alert(e.message);
     }
@@ -332,7 +332,7 @@ async function handleSave() {
       auras.push(indexEntry);
     }
     renderGrid();
-    await openDetail(saved.id);
+    navigate(saved.id);
   } catch (e) {
     alert(e.message);
   }
@@ -351,13 +351,37 @@ function escapeAttr(str) {
   return (str || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
+// routing
+
+function navigate(auraId) {
+  if (auraId) {
+    location.hash = auraId;
+  } else {
+    history.pushState(null, '', location.pathname + location.search);
+    handleRoute();
+  }
+}
+
+function handleRoute() {
+  const hash = location.hash.slice(1);
+  if (hash) {
+    openDetail(hash);
+  } else {
+    currentAura = null;
+    showView(gridView);
+  }
+}
+
+window.addEventListener('hashchange', handleRoute);
+window.addEventListener('popstate', handleRoute);
+
 // events
 
 searchInput.addEventListener('input', () => {
   renderGrid(searchInput.value.toLowerCase().trim());
 });
 
-backBtn.addEventListener('click', () => showView(gridView));
+backBtn.addEventListener('click', () => { history.back(); });
 addAuraBtn.addEventListener('click', () => openEditor(null));
 editAuraBtn.addEventListener('click', () => { if (currentAura) openEditor(currentAura); });
 editorCancel.addEventListener('click', () => showView(currentAura ? detailView : gridView));
@@ -392,6 +416,7 @@ editorImageUpload.addEventListener('change', async (e) => {
 async function init() {
   auras = await fetchAuras();
   renderGrid();
+  handleRoute();
 }
 
 init();
