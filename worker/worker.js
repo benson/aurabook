@@ -79,6 +79,7 @@ export default {
           name: body.name,
           description: body.description || '',
           tags: body.tags || [],
+          colors: body.colors || null,
           heroImage: body.heroImage || null,
           images: body.images || [],
           links: body.links || [],
