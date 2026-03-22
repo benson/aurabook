@@ -65,7 +65,11 @@ async function downloadTelegramFile(fileId, botToken) {
   const filePath = fileInfo.result.file_path;
   const res = await fetch(`https://api.telegram.org/file/bot${botToken}/${filePath}`);
   if (!res.ok) throw new Error('failed to download file');
-  return { buffer: await res.arrayBuffer(), contentType: res.headers.get('Content-Type') || 'image/jpeg' };
+  // Telegram returns application/octet-stream, so detect from file extension
+  const ext = filePath.split('.').pop().toLowerCase();
+  const mimeTypes = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', gif: 'image/gif' };
+  const contentType = mimeTypes[ext] || 'image/jpeg';
+  return { buffer: await res.arrayBuffer(), contentType };
 }
 
 // --- Claude helpers ---
@@ -266,12 +270,21 @@ async function handleTelegram(request, env) {
     return new Response('ok');
   }
 
-  // --- Explicit aura name in caption ---
+  // --- Explicit aura name(s) in caption (supports comma-separated) ---
   if (caption) {
-    const match = aurasList.find(a => a.id === slugify(caption) || a.name === caption);
-    if (match) {
-      await addImageToAura(match.id, imageId, env);
-      await sendMessage(chatId, `added to ${match.name} ✓`, botToken);
+    const names = caption.split(',').map(s => s.trim()).filter(Boolean);
+    const matched = [];
+    for (const name of names) {
+      const match = aurasList.find(a => a.id === slugify(name) || a.name === name);
+      if (match) matched.push(match);
+    }
+    if (matched.length > 0) {
+      for (const m of matched) {
+        await addImageToAura(m.id, imageId, env);
+      }
+      const addedNames = matched.map(m => m.name).join(', ');
+      const keyboard = [[{ text: '+ also add to...', callback_data: `also:${imageId}` }]];
+      await sendMessage(chatId, `added to ${addedNames} ✓`, botToken, keyboard);
       return new Response('ok');
     }
     // caption didn't match any aura — treat as a hint for classification
@@ -328,7 +341,43 @@ async function handleCallback(query, env) {
   const chatId = query.message.chat.id;
   const messageId = query.message.message_id;
 
-  const [action, queueId, ...rest] = data.split(':');
+  const [action, secondParam, ...rest] = data.split(':');
+
+  // "also add to..." flow — shows aura picker for an already-stored image
+  if (action === 'also') {
+    const imageId = secondParam;
+    const aurasList = await env.AURAS.get('auras:index', 'json') || [];
+    const rows = [];
+    for (let i = 0; i < aurasList.length; i += 3) {
+      rows.push(aurasList.slice(i, i + 3).map(a => ({
+        text: a.name,
+        callback_data: `alsopick:${imageId}:${a.id}`,
+      })));
+    }
+    rows.push([{ text: '✗ done', callback_data: `alsodone:x` }]);
+    await editMessage(chatId, messageId, 'also add to:', botToken, rows);
+    await answerCallback(query.id, botToken);
+    return new Response('ok');
+  }
+
+  if (action === 'alsopick') {
+    const imageId = secondParam;
+    const auraId = rest[0];
+    await addImageToAura(auraId, imageId, env);
+    const aura = await env.AURAS.get(`aura:${auraId}`, 'json');
+    const keyboard = [[{ text: '+ also add to...', callback_data: `also:${imageId}` }]];
+    await editMessage(chatId, messageId, `also added to ${aura?.name || auraId} ✓`, botToken, keyboard);
+    await answerCallback(query.id, botToken);
+    return new Response('ok');
+  }
+
+  if (action === 'alsodone') {
+    await editMessage(chatId, messageId, 'done ✓', botToken);
+    await answerCallback(query.id, botToken);
+    return new Response('ok');
+  }
+
+  const queueId = secondParam;
   const queueItem = await env.AURAS.get(`queue:${queueId}`, 'json');
 
   if (!queueItem) {
@@ -341,7 +390,8 @@ async function handleCallback(query, env) {
     await addImageToAura(auraId, queueItem.imageId, env);
     await env.AURAS.delete(`queue:${queueId}`);
     const aura = await env.AURAS.get(`aura:${auraId}`, 'json');
-    await editMessage(chatId, messageId, `added to ${aura?.name || auraId} ✓`, botToken);
+    const keyboard = [[{ text: '+ also add to...', callback_data: `also:${queueItem.imageId}` }]];
+    await editMessage(chatId, messageId, `added to ${aura?.name || auraId} ✓`, botToken, keyboard);
     await answerCallback(query.id, botToken);
   }
 
@@ -425,6 +475,29 @@ export default {
         return rebuildIndex(env, request);
       }
 
+      // GET /export — dump all aura records for backup
+      if (method === 'GET' && path === '/export') {
+        const index = await env.AURAS.get('auras:index', 'json') || [];
+        const auras = [];
+        for (const entry of index) {
+          const aura = await env.AURAS.get(`aura:${entry.id}`, 'json');
+          if (aura) auras.push(aura);
+        }
+        return json(auras, 200, request);
+      }
+
+      // POST /import — restore aura records from backup
+      if (method === 'POST' && path === '/import') {
+        const auras = await request.json();
+        const index = [];
+        for (const aura of auras) {
+          await env.AURAS.put(`aura:${aura.id}`, JSON.stringify(aura));
+          index.push(indexEntry(aura));
+        }
+        await env.AURAS.put('auras:index', JSON.stringify(index));
+        return json({ imported: auras.length }, 200, request);
+      }
+
       // GET /auras
       if (method === 'GET' && path === '/auras') {
         const index = await env.AURAS.get('auras:index', 'json') || [];
@@ -444,9 +517,12 @@ export default {
         const id = path.split('/images/')[1];
         const { value, metadata } = await env.AURAS.getWithMetadata(`img:${id}`, 'arrayBuffer');
         if (!value) return json({ error: 'not found' }, 404, request);
+        let ct = metadata?.contentType || 'image/jpeg';
+        if (ct === 'application/octet-stream') ct = 'image/jpeg';
         return new Response(value, {
           headers: {
-            'Content-Type': metadata?.contentType || 'image/jpeg',
+            'Content-Type': ct,
+            'Content-Disposition': 'inline',
             'Cache-Control': 'public, max-age=31536000',
             ...corsHeaders(request),
           },

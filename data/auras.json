@@ -1,0 +1,1434 @@
+[
+    {
+        "id": "vaporwave",
+        "name": "vaporwave",
+        "description": "An internet-born aesthetic that emerged in the early 2010s, rooted in a surreal nostalgia for late-capitalist consumer culture. Vaporwave remixes the visual and sonic artifacts of the 1980s and 90s \u00e2\u20ac\u201d corporate stock imagery, shopping mall muzak, early internet graphics, and Japanese commercial design \u00e2\u20ac\u201d into something dreamlike and melancholic. It treats consumer culture as both subject and medium, slowing it down and stretching it out until it becomes alien.\n\nVisually, vaporwave leans on glitch art, neon-lit grids, classical marble busts, palm trees, and pixelated sunsets. The color palette is heavy on pink, cyan, and lavender, often layered with scanline effects, VHS artifacts, and chrome textures. Typography tends toward fullwidth characters, Japanese katakana, and the rounded letterforms of early Macintosh interfaces.\n\nThe aesthetic sits at an unusual intersection of irony and sincerity \u00e2\u20ac\u201d simultaneously mocking and mourning the empty promises of late 20th century techno-optimism. It was one of the first aesthetics to be born entirely online, spreading through tumblr, bandcamp, and reddit before influencing mainstream graphic design, fashion, and album art.",
+        "tags": [
+            "retro",
+            "nostalgic",
+            "neon",
+            "surreal",
+            "tech"
+        ],
+        "heroImage": "img_1a7ca803",
+        "images": [
+            "img_1a7ca803"
+        ],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Vaporwave",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d vaporwave"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Vaporwave",
+                "label": "wikipedia \u00e2\u20ac\u201d vaporwave"
+            }
+        ],
+        "notes": "foundational albums: macintosh plus \u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\udc9d floral shoppe, blank banshee \u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\udc9d 0.",
+        "createdAt": "2026-03-22T17:26:38.647Z",
+        "updatedAt": "2026-03-22T23:12:19.372Z",
+        "colors": [
+            {
+                "hex": "#FF71CE",
+                "name": "hot pink"
+            },
+            {
+                "hex": "#01CDFE",
+                "name": "electric cyan"
+            },
+            {
+                "hex": "#B967FF",
+                "name": "lavender purple"
+            },
+            {
+                "hex": "#05FFA1",
+                "name": "neon mint"
+            },
+            {
+                "hex": "#FFFB96",
+                "name": "pale yellow"
+            },
+            {
+                "hex": "#300350",
+                "name": "deep plum"
+            }
+        ]
+    },
+    {
+        "id": "frutiger-aero",
+        "name": "frutiger aero",
+        "description": "The dominant visual language of consumer technology from roughly 2004 to 2013, named after Adrian Frutiger (the typeface designer) and the Windows Aero interface. This aesthetic defined the era when technology companies wanted their products to feel friendly, accessible, and aspirational \u00e2\u20ac\u201d think glossy surfaces, translucent glass effects, soft gradients, and imagery of nature integrated with clean digital interfaces.\n\nThe visual signature is unmistakable: skeuomorphic UI elements with realistic shadows and reflections, stock photography of diverse smiling people in bright environments, lush green landscapes paired with sleek devices, and an overall feeling of optimistic humanism. Brands like Windows Vista/7, early iPhone, and countless corporate websites embraced this look, creating a world where technology and nature existed in perfect harmony.\n\nFrutiger aero represents a specific moment of techno-optimism \u00e2\u20ac\u201d before flat design stripped away the ornamentation, and before social media's darker implications became apparent. There's an earnest, almost naive hopefulness baked into every glossy button and sun-dappled stock photo. Its recent revival among younger internet users reflects nostalgia for a time when the digital future still felt unambiguously positive.",
+        "tags": [
+            "optimistic",
+            "glossy",
+            "nature",
+            "tech",
+            "2000s"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Frutiger_Aero",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d frutiger aero"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Frutiger_Aero",
+                "label": "wikipedia \u00e2\u20ac\u201d frutiger aero"
+            }
+        ],
+        "notes": "strongly associated with windows vista/7, early ios, intel, hp branding of the era.",
+        "createdAt": "2026-03-22T17:26:39.312Z",
+        "updatedAt": "2026-03-22T23:05:02.107Z",
+        "colors": [
+            {
+                "hex": "#0689E4",
+                "name": "sky blue"
+            },
+            {
+                "hex": "#0032DB",
+                "name": "deep blue"
+            },
+            {
+                "hex": "#71AB23",
+                "name": "leaf green"
+            },
+            {
+                "hex": "#FFFFFF",
+                "name": "clean white"
+            },
+            {
+                "hex": "#FBB905",
+                "name": "warm amber"
+            },
+            {
+                "hex": "#64C8DC",
+                "name": "aqua"
+            }
+        ]
+    },
+    {
+        "id": "y2k-futurism",
+        "name": "y2k futurism",
+        "description": "The aesthetic of the late 1990s and early 2000s, when the approaching millennium inspired a wave of techno-optimism expressed through inflatable furniture, iridescent materials, and bulbous translucent plastics. Y2K futurism imagined a future that was bubbly, shiny, and playful \u00e2\u20ac\u201d less concerned with dystopia than with making technology feel fun and accessible. It was the visual language of the iMac G3, Nokia phones, and the first dot-com wave.\n\nKey visual motifs include metallic and holographic surfaces, transparent colored plastics, organic blob shapes, circuit board patterns used decoratively, and a fascination with chrome and liquid metal textures. The color palette centers on silver, electric blue, hot pink, and acid green, often combined with white and translucent materials. Typography favored rounded, futuristic sans-serifs and pixel fonts.\n\nThe aesthetic appears across product design (the original iMac, the Volkswagen New Beetle), fashion (PVC, platform shoes, tiny sunglasses), graphic design (early web design, tech advertising), and pop culture (The Matrix, music videos from Britney Spears and TLC). It captures a brief window when the future felt plastic, colorful, and within reach.",
+        "tags": [
+            "futuristic",
+            "glossy",
+            "playful",
+            "tech",
+            "2000s"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Y2K",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d y2k"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Y2K_(aesthetic)",
+                "label": "wikipedia \u00e2\u20ac\u201d y2k aesthetic"
+            }
+        ],
+        "notes": "iconic references: imac g3, the matrix, britney spears music videos, early web flash intros.",
+        "createdAt": "2026-03-22T17:26:39.853Z",
+        "updatedAt": "2026-03-22T23:05:02.664Z",
+        "colors": [
+            {
+                "hex": "#C8C8C8",
+                "name": "chrome silver"
+            },
+            {
+                "hex": "#643CF0",
+                "name": "electric purple"
+            },
+            {
+                "hex": "#007AFF",
+                "name": "digital blue"
+            },
+            {
+                "hex": "#32CD32",
+                "name": "lime flash"
+            },
+            {
+                "hex": "#FF69B4",
+                "name": "bubblegum pink"
+            },
+            {
+                "hex": "#E8E8E8",
+                "name": "brushed aluminum"
+            }
+        ]
+    },
+    {
+        "id": "retro-futurism",
+        "name": "retro futurism",
+        "description": "The aesthetic of futures past \u00e2\u20ac\u201d how mid-20th century culture imagined the world of tomorrow. Retro futurism draws from the optimistic space-age visions of the 1950s and 60s, when streamlined rockets, flying cars, and gleaming chrome cities felt like inevitable destinations rather than fantasies. It is equal parts nostalgia and imagination, celebrating a future that never arrived.\n\nThe visual vocabulary borrows heavily from the space race era: atomic starbursts, swooping fins, bubble helmets, ray guns, and architecture that looks like it was designed to launch into orbit. Color palettes tend toward warm metallics, turquoise, coral, and cream \u00e2\u20ac\u201d the palette of Googie architecture and vintage sci-fi pulp covers. There is a strong emphasis on aerodynamic curves, radial symmetry, and a general sense that everything should look like it is moving forward at great speed.\n\nRetro futurism has persisted as a design influence precisely because it represents optimism at its most unrestrained. Unlike cyberpunk's dystopian warnings or solarpunk's ecological anxiety, retro futurism simply assumes that tomorrow will be wonderful and that human ingenuity will solve everything. That earnest confidence gives it a warmth and charm that continues to resonate in architecture, product design, illustration, and film (The Incredibles, Fallout, The Jetsons).",
+        "tags": [
+            "futuristic",
+            "retro",
+            "optimistic",
+            "architectural",
+            "mid-century"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Retro-Futurism",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d retro futurism"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Retrofuturism",
+                "label": "wikipedia \u00e2\u20ac\u201d retrofuturism"
+            }
+        ],
+        "notes": "key references: googie architecture, the jetsons, fallout game series, syd mead concept art, eero saarinen furniture.",
+        "createdAt": "2026-03-22T17:26:40.419Z",
+        "updatedAt": "2026-03-22T23:05:03.268Z",
+        "colors": [
+            {
+                "hex": "#A92717",
+                "name": "rocket red"
+            },
+            {
+                "hex": "#2C395C",
+                "name": "space navy"
+            },
+            {
+                "hex": "#B9A727",
+                "name": "atomic gold"
+            },
+            {
+                "hex": "#40E0D0",
+                "name": "turquoise"
+            },
+            {
+                "hex": "#DEDED2",
+                "name": "retro cream"
+            },
+            {
+                "hex": "#E2493B",
+                "name": "vermillion"
+            }
+        ]
+    },
+    {
+        "id": "utopian-scholastic",
+        "name": "utopian scholastic",
+        "description": "The warm, slightly surreal visual language of 1990s and early 2000s educational media \u00e2\u20ac\u201d Scholastic book fairs, Discovery Zone posters, educational software splash screens, and the illustrated covers of paperback chapter books. This aesthetic carries a specific flavor of institutional optimism: the belief that learning is an adventure, that knowledge is colorful, and that the future belongs to curious kids.\n\nVisually, it combines photorealistic illustrations with fantastical elements \u00e2\u20ac\u201d a rainforest diorama that seems to glow from within, outer space rendered in vivid watercolors, dinosaurs standing in shafts of golden light, underwater scenes with impossible clarity. The typography is bold and friendly, often in primary colors against deep blue or black backgrounds. There is a pervasive sense of wonder that treats every subject \u00e2\u20ac\u201d volcanoes, ancient egypt, the solar system \u00e2\u20ac\u201d as equally thrilling.\n\nThe nostalgia for this aesthetic runs deep for anyone who grew up attending book fairs in elementary school gymnasiums, surrounded by glossy covers promising magic tree houses and choose-your-own-adventures. It represents a pre-internet mode of discovery where knowledge came in physical, tactile forms \u00e2\u20ac\u201d posters you could smell, books with textured covers, and fold-out diagrams that felt like opening a portal.",
+        "tags": [
+            "nostalgic",
+            "optimistic",
+            "playful",
+            "1990s"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Scholastic_Academia",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d scholastic academia"
+            }
+        ],
+        "notes": "key references: scholastic book fair catalogs, magic school bus, dorling kindersley eyewitness books, discovery zone branding.",
+        "createdAt": "2026-03-22T17:26:40.922Z",
+        "updatedAt": "2026-03-22T23:05:03.849Z",
+        "colors": [
+            {
+                "hex": "#FFFFFF",
+                "name": "clean white"
+            },
+            {
+                "hex": "#0057B8",
+                "name": "institutional blue"
+            },
+            {
+                "hex": "#E2231A",
+                "name": "scholastic red"
+            },
+            {
+                "hex": "#FFB81C",
+                "name": "warm yellow"
+            },
+            {
+                "hex": "#00843D",
+                "name": "educational green"
+            },
+            {
+                "hex": "#1C1C1C",
+                "name": "rich black"
+            }
+        ]
+    },
+    {
+        "id": "dark-academia",
+        "name": "dark academia",
+        "description": "An aesthetic centered on the romanticization of classical education, literature, and the European intellectual tradition. Dark academia evokes the atmosphere of ivy-covered universities, dimly lit libraries, handwritten letters, and long afternoons spent reading dense philosophy. It carries an undercurrent of melancholy and obsession \u00e2\u20ac\u201d the pursuit of knowledge as something consuming, beautiful, and slightly dangerous.\n\nThe visual palette is autumnal and muted: deep browns, forest greens, burgundy, cream, and black. Materials are natural and aged \u00e2\u20ac\u201d tweed, leather, parchment, dark wood, brass. Imagery gravitates toward gothic architecture, candlelit study desks, old typewriters, skulls used as bookends, and rain-streaked windows overlooking courtyards. There is a strong literary dimension, with references to the Western canon \u00e2\u20ac\u201d Homer, Donna Tartt, Oscar Wilde, Dostoevsky.\n\nDark academia emerged as a distinct internet aesthetic around 2015-2019, primarily on tumblr and later tiktok, though its roots draw from much older traditions of intellectual romanticism. It appeals to a desire for depth, rigor, and beauty in an age of algorithmic distraction \u00e2\u20ac\u201d though critics note its tendency to idealize exclusionary institutions and Eurocentric knowledge systems.",
+        "tags": [
+            "dark",
+            "ornate",
+            "architectural"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Dark_Academia",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d dark academia"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Dark_academia",
+                "label": "wikipedia \u00e2\u20ac\u201d dark academia"
+            }
+        ],
+        "notes": "key references: the secret history by donna tartt, dead poets society, oxford/cambridge architecture, kill your darlings.",
+        "createdAt": "2026-03-22T17:26:41.532Z",
+        "updatedAt": "2026-03-22T23:05:04.382Z",
+        "colors": [
+            {
+                "hex": "#1E1E24",
+                "name": "ink black"
+            },
+            {
+                "hex": "#5E4042",
+                "name": "oxblood brown"
+            },
+            {
+                "hex": "#8C6B4F",
+                "name": "warm umber"
+            },
+            {
+                "hex": "#D8C3A5",
+                "name": "antique cream"
+            },
+            {
+                "hex": "#3B4F3A",
+                "name": "forest green"
+            },
+            {
+                "hex": "#7A2E35",
+                "name": "deep burgundy"
+            }
+        ]
+    },
+    {
+        "id": "solarpunk",
+        "name": "solarpunk",
+        "description": "A speculative aesthetic and movement that imagines a future where humanity has solved the climate crisis through a combination of renewable energy, ecological design, community organization, and appropriate technology. Where cyberpunk warns and steampunk nostalgizes, solarpunk proposes \u00e2\u20ac\u201d offering visions of cities integrated with nature, buildings covered in vertical gardens, and communities powered by solar panels and wind turbines.\n\nThe visual language blends organic and technological forms: architecture with sweeping curves inspired by art nouveau, green roofs and living walls, solar panels integrated into stained glass, community gardens on every block, and public transit systems winding through urban forests. The color palette is dominated by lush greens, warm golds, sky blues, and terracotta \u00e2\u20ac\u201d the colors of a world where nature and human habitation are deeply intertwined rather than opposed.\n\nSolarpunk is notable for being explicitly aspirational \u00e2\u20ac\u201d it is less interested in predicting the future than in inspiring people to build it. The aesthetic draws from global influences including West African, Southeast Asian, and Indigenous design traditions, deliberately pushing back against the Western-centric futures of older speculative genres. It has gained significant traction since the mid-2010s as climate anxiety has intensified, offering a counterweight to doom and nihilism.",
+        "tags": [
+            "optimistic",
+            "futuristic",
+            "nature",
+            "sustainable",
+            "architectural"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Solarpunk",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d solarpunk"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Solarpunk",
+                "label": "wikipedia \u00e2\u20ac\u201d solarpunk"
+            }
+        ],
+        "notes": "key references: studio ghibli (nausicaa, laputa), singapore architecture (gardens by the bay), earthship biotecture.",
+        "createdAt": "2026-03-22T17:26:42.025Z",
+        "updatedAt": "2026-03-22T23:05:04.977Z",
+        "colors": [
+            {
+                "hex": "#2D6A4F",
+                "name": "deep foliage"
+            },
+            {
+                "hex": "#FFD166",
+                "name": "solar gold"
+            },
+            {
+                "hex": "#87CEEB",
+                "name": "clear sky"
+            },
+            {
+                "hex": "#D4A373",
+                "name": "terracotta"
+            },
+            {
+                "hex": "#40916C",
+                "name": "bright moss"
+            },
+            {
+                "hex": "#264653",
+                "name": "deep teal"
+            }
+        ]
+    },
+    {
+        "id": "brutalism",
+        "name": "brutalism",
+        "description": "An architectural and design movement characterized by raw, unfinished surfaces \u00e2\u20ac\u201d most iconically exposed concrete (b\u00c3\u00a9ton brut, the French term from which the name derives). Emerging in the 1950s as an outgrowth of modernism, brutalism rejected decoration and polish in favor of honest expression of materials and structure. Buildings were designed to look like what they were: massive, heavy, and unapologetically functional.\n\nThe aesthetic is defined by bold geometric forms, repetitive modular elements, monolithic scale, and the visible texture of poured concrete with its formwork imprints. Brutalist buildings often appear fortress-like, with deep-set windows, cantilevered volumes, and a deliberate sense of weight and permanence. The palette is dominated by raw concrete grey, but often punctuated by bold primary accents \u00e2\u20ac\u201d a red door, a yellow stairwell \u00e2\u20ac\u201d that feel almost defiant against the monochrome mass.\n\nOriginally associated with social housing and public institutions (universities, libraries, government buildings), brutalism fell out of favor in the 1970s-80s as its buildings aged poorly and were perceived as cold and oppressive. A major revival began in the 2010s, driven by architectural photography on instagram and a new generation's appreciation for its uncompromising honesty. In web design, \"brutalist\" has become shorthand for deliberately raw, unstyled interfaces that reject the polish of modern UX conventions.",
+        "tags": [
+            "minimal",
+            "geometric",
+            "architectural",
+            "textured",
+            "urban"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Brutalism",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d brutalism"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Brutalist_architecture",
+                "label": "wikipedia \u00e2\u20ac\u201d brutalist architecture"
+            },
+            {
+                "url": "https://brutalistwebsites.com/",
+                "label": "brutalist websites"
+            }
+        ],
+        "notes": "key references: barbican centre (london), habitat 67 (montreal), national theatre (london), le corbusier unite d habitation.",
+        "createdAt": "2026-03-22T17:26:42.598Z",
+        "updatedAt": "2026-03-22T23:05:05.526Z",
+        "colors": [
+            {
+                "hex": "#808080",
+                "name": "medium concrete"
+            },
+            {
+                "hex": "#B0B0B0",
+                "name": "weathered concrete"
+            },
+            {
+                "hex": "#333333",
+                "name": "shadow charcoal"
+            },
+            {
+                "hex": "#C8BFA9",
+                "name": "warm aggregate"
+            },
+            {
+                "hex": "#1A1A1A",
+                "name": "near-black"
+            },
+            {
+                "hex": "#D9D2C5",
+                "name": "pale limestone"
+            }
+        ]
+    },
+    {
+        "id": "cottagecore",
+        "name": "cottagecore",
+        "description": "A romanticized vision of rural and pastoral life that gained enormous popularity during the late 2010s and exploded during the covid-19 pandemic. Cottagecore imagines a simpler existence centered on baking bread, tending gardens, pressing wildflowers, and living in a stone cottage surrounded by meadows. It is deliberately anachronistic, drawing from a pre-industrial European countryside that may never have existed in quite this idealized form.\n\nThe visual language is soft and warm: floral prints, gingham patterns, wicker baskets, mason jars filled with wildflowers, linen aprons, hand-thrown pottery, and dappled sunlight filtering through lace curtains. The color palette is muted and natural \u00e2\u20ac\u201d sage green, dusty rose, cream, lavender, and warm brown. Everything looks slightly sun-bleached and well-worn, as if it has been loved and used for generations.\n\nCottagecore resonated so strongly because it offered an antidote to the hyperconnected, always-on digital world. It is fundamentally about slowness, tactility, and self-sufficiency \u00e2\u20ac\u201d making things by hand, growing your own food, finding contentment in small domestic rituals. The aesthetic has been embraced across gender identities and has a particularly strong following in queer communities, where it represents a vision of peaceful rural existence free from the heteronormative constraints historically associated with country life.",
+        "tags": [
+            "nostalgic",
+            "nature",
+            "domestic",
+            "handcraft"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Cottagecore",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d cottagecore"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Cottagecore",
+                "label": "wikipedia \u00e2\u20ac\u201d cottagecore"
+            }
+        ],
+        "notes": "key references: beatrix potter illustrations, studio ghibli (howls moving castle, kiki), anne of green gables, mushroom foraging culture.",
+        "createdAt": "2026-03-22T17:26:43.122Z",
+        "updatedAt": "2026-03-22T23:05:06.038Z",
+        "colors": [
+            {
+                "hex": "#F5EDE0",
+                "name": "warm cream"
+            },
+            {
+                "hex": "#A8BFA0",
+                "name": "sage green"
+            },
+            {
+                "hex": "#D4A59A",
+                "name": "dusty rose"
+            },
+            {
+                "hex": "#C9A96E",
+                "name": "wheat gold"
+            },
+            {
+                "hex": "#8B6F4E",
+                "name": "aged wood"
+            },
+            {
+                "hex": "#F2D4DC",
+                "name": "wildflower blush"
+            }
+        ]
+    },
+    {
+        "id": "liminal-space",
+        "name": "liminal space",
+        "description": "The aesthetic of transitional, in-between places experienced in the absence of their usual human activity \u00e2\u20ac\u201d empty shopping malls at 3am, hotel corridors that stretch endlessly, school hallways during summer break, parking garages at dusk. Liminal spaces are defined not by what they are but by what is missing: the people and purpose that normally give them meaning. Without that context, they become uncanny and dreamlike.\n\nThe visual signature is fluorescent lighting casting flat, shadowless illumination on commercial interiors. Worn carpet patterns, drop ceiling tiles, beige walls, and the particular institutional palette of places designed to be passed through rather than inhabited. The emptiness is the point \u00e2\u20ac\u201d these spaces feel like memories of places, or like environments from a dream that you can almost but not quite place. Photography tends toward slightly overexposed or color-shifted processing that enhances the unreality.\n\nThe liminal space aesthetic emerged from online communities around 2019, particularly the \"backrooms\" creepypasta and related subreddits. It taps into a collective recognition that certain everyday environments \u00e2\u20ac\u201d when stripped of their normal context \u00e2\u20ac\u201d trigger a deep psychological unease. The appeal is in that productive discomfort: these images feel like they should be mundane, but something is fundamentally wrong in a way that is difficult to articulate.",
+        "tags": [
+            "surreal",
+            "dark",
+            "urban",
+            "nostalgic"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Liminal_Space",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d liminal space"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Liminal_space_(aesthetic)",
+                "label": "wikipedia \u00e2\u20ac\u201d liminal space"
+            }
+        ],
+        "notes": "key references: the backrooms creepypasta, pools and empty malls photography, edward hopper paintings, stanley kubrick hallway shots.",
+        "createdAt": "2026-03-22T17:26:43.601Z",
+        "updatedAt": "2026-03-22T23:05:06.479Z",
+        "colors": [
+            {
+                "hex": "#E9E7D1",
+                "name": "fluorescent white"
+            },
+            {
+                "hex": "#C9C2A1",
+                "name": "institutional beige"
+            },
+            {
+                "hex": "#3D4456",
+                "name": "shadow blue-grey"
+            },
+            {
+                "hex": "#A89F78",
+                "name": "worn carpet tan"
+            },
+            {
+                "hex": "#1E1E1E",
+                "name": "void black"
+            },
+            {
+                "hex": "#D4CFA0",
+                "name": "sickly yellow"
+            }
+        ]
+    },
+    {
+        "id": "cyberpunk",
+        "name": "cyberpunk",
+        "description": "\"High tech, low life\" \u00e2\u20ac\u201d the aesthetic of dystopian futures where advanced technology coexists with social decay, corporate dominance, and street-level survival. Originating in 1980s science fiction literature (William Gibson, Philip K. Dick, Bruce Sterling), cyberpunk imagines megacities choked with neon advertising, rain-slicked streets reflecting holographic billboards, and hackers in cramped apartments jacked into vast digital networks.\n\nThe visual palette is dominated by electric blues, neon pinks and purples, and toxic greens against backgrounds of deep black and dark metal. Urban environments are dense, vertical, and layered \u00e2\u20ac\u201d street-level markets beneath towering corporate arcologies, tangled cables and exposed infrastructure, retrofitted technology and makeshift cybernetic augmentations. The aesthetic embraces visual noise: kanji signage, scrolling data streams, lens flare, and chromatic aberration.\n\nCyberpunk has proven remarkably durable as both a literary genre and a design vocabulary, influencing everything from film (Blade Runner, Ghost in the Shell, The Matrix) to video games (Deus Ex, Cyberpunk 2077) to fashion (techwear, LED accessories). Its core tension \u00e2\u20ac\u201d that technological progress does not equate to social progress \u00e2\u20ac\u201d has only become more relevant as real-world developments in AI, surveillance, and corporate power increasingly resemble the genre's warnings.",
+        "tags": [
+            "dark",
+            "neon",
+            "futuristic",
+            "urban",
+            "tech"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Cyberpunk_(aesthetic)",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d cyberpunk"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Cyberpunk",
+                "label": "wikipedia \u00e2\u20ac\u201d cyberpunk"
+            }
+        ],
+        "notes": "key references: blade runner (1982/2049), neuromancer by william gibson, ghost in the shell, akira, deus ex.",
+        "createdAt": "2026-03-22T17:26:44.210Z",
+        "updatedAt": "2026-03-22T23:05:07.022Z",
+        "colors": [
+            {
+                "hex": "#0B0D17",
+                "name": "night void"
+            },
+            {
+                "hex": "#711C91",
+                "name": "deep purple"
+            },
+            {
+                "hex": "#EA00D9",
+                "name": "hot magenta"
+            },
+            {
+                "hex": "#0ABDC6",
+                "name": "neon cyan"
+            },
+            {
+                "hex": "#133E7C",
+                "name": "corporate blue"
+            },
+            {
+                "hex": "#B0FF00",
+                "name": "acid green"
+            }
+        ]
+    },
+    {
+        "id": "wabi-sabi",
+        "name": "wabi-sabi",
+        "description": "A Japanese aesthetic philosophy centered on finding beauty in imperfection, impermanence, and incompleteness. Rooted in Buddhist teaching \u00e2\u20ac\u201d particularly the acceptance of transience and suffering \u00e2\u20ac\u201d wabi-sabi values the worn, the weathered, and the modest over the polished, the pristine, and the grand. A cracked teacup repaired with gold (kintsugi), a moss-covered stone path, the patina on aged wood \u00e2\u20ac\u201d these are not flaws to be corrected but qualities to be appreciated.\n\nThe visual expression of wabi-sabi is characterized by natural materials in their unrefined state: raw clay, undyed linen, weathered timber, rusted iron, hand-shaped ceramics with visible irregularities. The color palette is drawn directly from the natural world \u00e2\u20ac\u201d earth tones, stone greys, muted greens, the warm brown of unglazed pottery. Spaces designed with wabi-sabi principles feel spare but not empty, simple but not sterile. There is always evidence of the hand, of time, of use.\n\nWabi-sabi stands in deliberate contrast to Western aesthetic traditions that prize symmetry, permanence, and perfection. In design contexts, it offers a counterpoint to the slick minimalism of tech culture \u00e2\u20ac\u201d where minimalism strips away to reveal clean surfaces, wabi-sabi strips away to reveal texture, age, and the beauty of things as they actually are rather than as they might ideally be.",
+        "tags": [
+            "minimal",
+            "textured",
+            "nature",
+            "handcraft"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Wabi-Sabi",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d wabi sabi"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Wabi-sabi",
+                "label": "wikipedia \u00e2\u20ac\u201d wabi-sabi"
+            }
+        ],
+        "notes": "key references: kintsugi (golden repair), tea ceremony aesthetics, zen garden design, leonard koren \"wabi-sabi for artists designers poets and philosophers\".",
+        "createdAt": "2026-03-22T17:26:44.801Z",
+        "updatedAt": "2026-03-22T23:05:07.524Z",
+        "colors": [
+            {
+                "hex": "#C8C8B6",
+                "name": "ash white"
+            },
+            {
+                "hex": "#7D9B6F",
+                "name": "moss green"
+            },
+            {
+                "hex": "#A0846B",
+                "name": "warm clay"
+            },
+            {
+                "hex": "#D6CFC0",
+                "name": "raw linen"
+            },
+            {
+                "hex": "#8B7D6B",
+                "name": "weathered stone"
+            },
+            {
+                "hex": "#B4654A",
+                "name": "oxidized iron"
+            }
+        ]
+    },
+    {
+        "id": "memphis-design",
+        "name": "memphis design",
+        "description": "A postmodern design movement founded in Milan in 1981 by Ettore Sottsass and a group of young designers who were bored with the good taste of mainstream modernism. Memphis (named after a Bob Dylan song, not the city) deliberately embraced everything that \"serious\" design rejected: clashing colors, cartoonish patterns, mismatched materials, and forms that prioritized fun and provocation over function and refinement.\n\nThe visual signature is instantly recognizable: bold geometric shapes (triangles, circles, squiggly lines) combined in loud, almost aggressive compositions. The color palette is aggressively cheerful \u00e2\u20ac\u201d bright pink, electric blue, lemon yellow, mint green, and red \u00e2\u20ac\u201d often applied to surfaces covered in terrazzo-like speckle patterns, zigzags, and polka dots. Materials mixed laminate with marble, neon with pastels, cheap with expensive, in combinations that felt deliberately wrong.\n\nMemphis lasted as a formal movement only until 1988, but its influence echoes through decades of design history. It directly shaped 80s and 90s pop culture (Saved by the Bell set design, early MTV graphics, Patrick Nagel illustrations) and has experienced periodic revivals. Its lasting contribution was proving that design could be joyful, irreverent, and deliberately unserious without being dismissed \u00e2\u20ac\u201d that bad taste, deployed with enough confidence, becomes its own kind of good taste.",
+        "tags": [
+            "playful",
+            "geometric",
+            "postmodern",
+            "1980s"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Memphis_Design",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d memphis design"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Memphis_Group",
+                "label": "wikipedia \u00e2\u20ac\u201d memphis group"
+            }
+        ],
+        "notes": "key references: ettore sottsass carlton bookshelf, saved by the bell set design, early mtv graphics, david bowie memphis-influenced album covers.",
+        "createdAt": "2026-03-22T17:26:45.276Z",
+        "updatedAt": "2026-03-22T23:05:08.017Z",
+        "colors": [
+            {
+                "hex": "#F725A0",
+                "name": "hot pink"
+            },
+            {
+                "hex": "#FAD141",
+                "name": "bright yellow"
+            },
+            {
+                "hex": "#0CB2C0",
+                "name": "teal"
+            },
+            {
+                "hex": "#672394",
+                "name": "purple"
+            },
+            {
+                "hex": "#EC9309",
+                "name": "orange"
+            },
+            {
+                "hex": "#E8E6D9",
+                "name": "off-white"
+            }
+        ]
+    },
+    {
+        "id": "nordic-minimalism",
+        "name": "nordic minimalism",
+        "description": "The Scandinavian approach to design that prioritizes function, simplicity, natural materials, and the quality of light in spaces. Emerging from the mid-20th century design traditions of Denmark, Sweden, Finland, and Norway, nordic minimalism is shaped by long dark winters, a cultural emphasis on egalitarianism, and the influence of the surrounding natural landscape \u00e2\u20ac\u201d birch forests, granite coastlines, and the pale light of high latitudes.\n\nThe visual language is characterized by clean lines, open spaces, and a restrained material palette: pale woods (birch, ash, pine), white and grey walls, natural textiles (wool, linen, cotton), and the occasional warm accent in muted tones. Furniture tends toward elegant simplicity \u00e2\u20ac\u201d forms that are pared down to their essential structure without feeling cold or austere. The relationship to light is central: large windows, candles, and warm artificial lighting designed to counteract the seasonal darkness.\n\nWhat distinguishes nordic minimalism from other minimalist traditions is its warmth. Where Japanese minimalism emphasizes emptiness and impermanence, and tech minimalism favors sleek surfaces, the Scandinavian version is fundamentally about coziness (hygge) and livability. A nordic minimal space should feel calm and uncluttered, but also deeply inviting \u00e2\u20ac\u201d a place where you want to sit with a blanket, a cup of coffee, and a long book while snow falls outside.",
+        "tags": [
+            "minimal",
+            "nature",
+            "domestic",
+            "handcraft"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Scandinavian_Minimalism",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d scandinavian minimalism"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Scandinavian_design",
+                "label": "wikipedia \u00e2\u20ac\u201d scandinavian design"
+            }
+        ],
+        "notes": "key references: muji, ikea at its best, arne jacobsen egg chair, alvar aalto, finnish sauna culture, hygge.",
+        "createdAt": "2026-03-22T17:26:45.822Z",
+        "updatedAt": "2026-03-22T23:05:08.568Z",
+        "colors": [
+            {
+                "hex": "#F7F7F7",
+                "name": "near-white"
+            },
+            {
+                "hex": "#D7E1EA",
+                "name": "pale blue-gray"
+            },
+            {
+                "hex": "#C4B8A5",
+                "name": "warm sand"
+            },
+            {
+                "hex": "#8FA89E",
+                "name": "muted sage"
+            },
+            {
+                "hex": "#3D4A5C",
+                "name": "deep slate"
+            }
+        ]
+    },
+    {
+        "id": "art-deco",
+        "name": "art deco",
+        "description": "A decorative arts movement that flourished from the 1920s through the 1940s, defined by geometric precision, luxurious materials, and an unapologetic embrace of glamour and modernity. Art deco emerged from the intersection of modernist geometry, ancient Egyptian and Mesoamerican motifs, machine-age industrial forms, and the exuberance of the Jazz Age. It was the aesthetic of skyscrapers, ocean liners, movie palaces, and cocktail bars \u00e2\u20ac\u201d spaces designed to make people feel like the future had arrived and it was magnificent.\n\nThe visual vocabulary is built on strong vertical lines, stepped forms, sunburst patterns, chevrons, and symmetrical geometric compositions. Materials are deliberately opulent: polished chrome, lacquered wood, exotic inlays, terrazzo floors, gold leaf, and marble. The color palette ranges from bold combinations of black and gold, emerald and silver, to the softer pastels of art deco's later Miami Beach incarnation. Typography favors angular, geometric letterforms with strong vertical emphasis.\n\nArt deco differs from art nouveau (its predecessor) in its embrace of the machine and the geometric over the organic and the handcrafted. It was a style of confident modernity \u00e2\u20ac\u201d the aesthetic of a world that believed in progress, prosperity, and the transformative power of good design. Its influence remains visible in everything from the Chrysler Building to contemporary cocktail bar interiors to the gatsby-era revival in fashion and film.",
+        "tags": [
+            "ornate",
+            "geometric",
+            "architectural",
+            "1920s"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Art_Deco",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d art deco"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Art_Deco",
+                "label": "wikipedia \u00e2\u20ac\u201d art deco"
+            }
+        ],
+        "notes": "key references: chrysler building (nyc), miami beach historic district, the great gatsby (2013 film), orient express interiors, tamara de lempicka paintings.",
+        "createdAt": "2026-03-22T17:26:46.330Z",
+        "updatedAt": "2026-03-22T23:05:09.114Z",
+        "colors": [
+            {
+                "hex": "#0F0F12",
+                "name": "near-black"
+            },
+            {
+                "hex": "#D4AF37",
+                "name": "gold"
+            },
+            {
+                "hex": "#F2E7D5",
+                "name": "ivory"
+            },
+            {
+                "hex": "#0B5345",
+                "name": "deep emerald"
+            },
+            {
+                "hex": "#1B2A4A",
+                "name": "navy"
+            },
+            {
+                "hex": "#800020",
+                "name": "burgundy"
+            }
+        ]
+    },
+    {
+        "id": "global-village-coffeehouse",
+        "name": "global village coffeehouse",
+        "description": "The aesthetic of independent coffee shops, world music compilations, and the early fair-trade movement \u00e2\u20ac\u201d a warm, eclectic visual language that blends influences from across the globe into a cozy, slightly bohemian atmosphere. Think exposed brick walls hung with tapestries from different continents, mismatched wooden furniture, hand-painted ceramic mugs, burlap coffee sacks used as decor, and world music playing over a sound system next to a community bulletin board.\n\nThe visual palette is warm and earthy: deep terracotta, coffee brown, burnt orange, sage green, and natural wood tones. Textures are layered and tactile \u00e2\u20ac\u201d woven textiles, jute, hammered metal, clay, and reclaimed wood. Decorative elements draw from multiple cultural traditions without strict adherence to any one: Moroccan lanterns, Indonesian batik, South American woven blankets, African carved figures, Indian block-print fabrics. The lighting is always warm, usually from a mix of pendant lamps, string lights, and candles.\n\nThis aesthetic peaked in the late 1990s and 2000s, closely tied to the Putumayo World Music era, early fair-trade certification, and the spread of independent coffeehouse culture before the complete dominance of Starbucks. It represents a certain kind of pre-internet cosmopolitanism \u00e2\u20ac\u201d the idea that the world could be explored and appreciated through its crafts, cuisines, and music, ideally while sitting in a comfortable chair with a very good latte.",
+        "tags": [
+            "handcraft",
+            "domestic",
+            "eclectic",
+            "1990s"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Global_Village_Coffeehouse",
+                "label": "aesthetics wiki \u00e2\u20ac\u201d global village coffeehouse"
+            }
+        ],
+        "notes": "key references: putumayo world music album covers, early fair trade branding, ten thousand villages stores, independent coffee shop culture of the 2000s.",
+        "createdAt": "2026-03-22T17:26:47.022Z",
+        "updatedAt": "2026-03-22T23:05:09.739Z",
+        "colors": [
+            {
+                "hex": "#6B3A2A",
+                "name": "dark coffee"
+            },
+            {
+                "hex": "#C2703E",
+                "name": "terracotta"
+            },
+            {
+                "hex": "#D4A94B",
+                "name": "mustard gold"
+            },
+            {
+                "hex": "#5C6B3C",
+                "name": "olive green"
+            },
+            {
+                "hex": "#4A5568",
+                "name": "faded slate"
+            },
+            {
+                "hex": "#E8D5B7",
+                "name": "warm parchment"
+            }
+        ]
+    },
+    {
+        "id": "goblincore",
+        "name": "goblincore",
+        "description": "Goblincore is the aesthetic of the damp forest floor, the rotting log, the underside of the rock. It is a celebration of everything that traditional nature aesthetics overlook or discard as ugly: mushrooms sprouting from decay, moss blanketing forgotten stumps, snails leaving silver trails across wet bark, frogs half-buried in mud, and collections of bones, stones, and other found objects gathered without any obligation toward prettiness. Where cottagecore presents a sanitized pastoral fantasy of wildflower meadows and freshly baked bread, goblincore revels in the parts of nature that are slimy, dirty, and strange. Its visual language is one of close-up textures rather than sweeping vistas \u00e2\u20ac\u201d the fractal gills of a shelf fungus, the iridescent slime of a slug, the mineral veins running through a cracked geode.\n\nThe aesthetic emerged primarily on Tumblr around 2019, though its sensibility had been building for years in pockets of online culture that celebrated the weird and the marginal. It resonated strongly with neurodivergent communities, who recognized in goblincore a validation of the joy found in collecting, cataloguing, and obsessing over small natural objects that others might dismiss as worthless. A jar of interesting pebbles, a shelf of dried mushrooms, a box of bird skulls found on walks \u00e2\u20ac\u201d these are the treasures of goblincore, valued not for their beauty or rarity but for the curiosity and delight they inspire in the collector.\n\nAt its core, goblincore is an aesthetic of curiosity over beauty, of fascination over taste. It rejects the idea that our relationship with nature should be filtered through what is conventionally attractive, and instead embraces the full spectrum of the natural world \u00e2\u20ac\u201d including the parts that make you want to poke them with a stick to see what happens underneath.",
+        "tags": [
+            "nature",
+            "eclectic",
+            "playful",
+            "textured"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "label": "Wikipedia - Goblincore",
+                "url": "https://en.wikipedia.org/wiki/Goblincore"
+            },
+            {
+                "label": "Aesthetics Wiki - Goblincore",
+                "url": "https://aesthetics.fandom.com/wiki/Goblincore"
+            }
+        ],
+        "notes": "",
+        "createdAt": "2026-03-22T21:42:50.196Z",
+        "updatedAt": "2026-03-22T23:05:10.217Z",
+        "colors": [
+            {
+                "hex": "#8B6914",
+                "name": "mushroom brown"
+            },
+            {
+                "hex": "#4A5D23",
+                "name": "moss green"
+            },
+            {
+                "hex": "#3B2F2F",
+                "name": "soil dark brown"
+            },
+            {
+                "hex": "#8E8D8A",
+                "name": "stone gray"
+            },
+            {
+                "hex": "#6B4984",
+                "name": "slug purple"
+            }
+        ]
+    },
+    {
+        "id": "steampunk",
+        "name": "steampunk",
+        "description": "Steampunk is the retrofuturistic aesthetic that imagines a world where Victorian-era steam power remained the dominant technology, producing an alternate timeline of brass gears, clockwork mechanisms, leather and goggles, dirigibles drifting over gaslit cities, and ornate machinery that hisses and clanks with visible mechanical purpose. Every surface is riveted, every device has exposed workings, and every piece of technology carries the weight and warmth of handcrafted metal rather than the sleek anonymity of plastic. Its literary roots trace back to the speculative fiction of Jules Verne and H.G. Wells, but the term itself was coined in 1987 by author K.W. Jeter in a letter to Locus magazine, half-jokingly describing the Victorian-set science fiction he and his peers were writing. From there it grew into one of the most visually distinctive subcultures of the late 20th and early 21st centuries.\n\nThe aesthetic extends far beyond literature into fashion, maker culture, art, and industrial design. Steampunk fashion combines Victorian tailoring \u00e2\u20ac\u201d waistcoats, corsets, top hats, long coats \u00e2\u20ac\u201d with the functional accessories of an imagined engineer-adventurer: brass goggles, leather tool belts, modified pocket watches, and ray guns assembled from clock parts and copper pipe fittings. The maker ethos is central to steampunk: its practitioners build functional and decorative objects by hand, modifying modern electronics with Victorian-era casings or constructing elaborate kinetic sculptures from reclaimed machinery. There is a deep respect for visible craftsmanship, for the idea that technology should be understood by its user, not sealed inside a featureless shell.\n\nAt the philosophical level, steampunk represents a longing for a version of technological progress that never lost its connection to human skill and aesthetic ambition. It imagines a world where the Industrial Revolution produced not mass-manufactured sameness but intricate, personalized machines \u00e2\u20ac\u201d where engineering was still an art and every mechanism was built to be both functional and beautiful. This tension between progress and craftsmanship gives steampunk its enduring appeal as both a visual aesthetic and a critique of disposable modern design.",
+        "tags": [
+            "retro",
+            "ornate",
+            "handcraft",
+            "futuristic"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "label": "Wikipedia - Steampunk",
+                "url": "https://en.wikipedia.org/wiki/Steampunk"
+            }
+        ],
+        "notes": "",
+        "createdAt": "2026-03-22T21:43:06.074Z",
+        "updatedAt": "2026-03-22T23:05:10.794Z",
+        "colors": [
+            {
+                "hex": "#B87333",
+                "name": "brass copper"
+            },
+            {
+                "hex": "#3C280D",
+                "name": "dark leather brown"
+            },
+            {
+                "hex": "#4A7C59",
+                "name": "oxidized patina green"
+            },
+            {
+                "hex": "#FFFFF0",
+                "name": "ivory"
+            },
+            {
+                "hex": "#1C1C1C",
+                "name": "iron black"
+            },
+            {
+                "hex": "#8B4513",
+                "name": "saddle leather"
+            }
+        ]
+    },
+    {
+        "id": "old-money",
+        "name": "old money",
+        "description": "The old money aesthetic \u00e2\u20ac\u201d also called quiet luxury or stealth wealth \u00e2\u20ac\u201d is the visual language of understated inherited wealth. It communicates status not through logos, trends, or conspicuous display, but through the quality of materials and the restraint of choices: cashmere that drapes without trying, tweed that has been worn for decades, leather that has developed a patina from actual use, and linen that wrinkles in a way that signals you do not care if it wrinkles. The reference points are Ralph Lauren's original vision of American aristocracy, the Kennedy compound at Hyannis Port, the Nancy Meyers film interior \u00e2\u20ac\u201d those cream-colored kitchens with Sub-Zero refrigerators and book-lined studies where no one ever seems to work. The geography is the Hamptons, Martha's Vineyard, Greenwich, and the Upper East Side before it got loud.\n\nIn fashion, the aesthetic found its contemporary expression in the stealth wealth movement: brands like Loro Piana, Brunello Cucinelli, and The Row, where a plain cashmere sweater costs four thousand dollars and the entire point is that you cannot tell by looking at it. There are no visible logos, no seasonal trends, no flash. Colors are muted and rich but never bright \u00e2\u20ac\u201d navy, cream, camel, forest green, burgundy. Fabrics are natural and substantial. The silhouettes are classic and slightly conservative, drawing from preppy and collegiate traditions: cable-knit sweaters, oxford shirts, penny loafers, pearl earrings, and blazers with brass buttons that suggest membership in something you were not invited to join.\n\nOld money is distinct from dark academia, though they share some DNA in their love of libraries, tweed, and institutional traditions. Where dark academia romanticizes the intellectual life of the student, old money romanticizes the ease of those who never needed to study at all. It is an aesthetic of arrival rather than aspiration \u00e2\u20ac\u201d everything is already owned, already broken in, already inherited. The fundamental message is that taste, like wealth, should appear effortless, as though it was never acquired but simply always existed.",
+        "tags": [
+            "minimal",
+            "domestic",
+            "nostalgic"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "label": "Wikipedia - Quiet luxury",
+                "url": "https://en.wikipedia.org/wiki/Quiet_luxury"
+            },
+            {
+                "label": "Aesthetics Wiki - Old Money",
+                "url": "https://aesthetics.fandom.com/wiki/Old_Money"
+            }
+        ],
+        "notes": "",
+        "createdAt": "2026-03-22T21:43:22.905Z",
+        "updatedAt": "2026-03-22T23:05:11.334Z",
+        "colors": [
+            {
+                "hex": "#FFFDD0",
+                "name": "cream"
+            },
+            {
+                "hex": "#1B2A4A",
+                "name": "navy"
+            },
+            {
+                "hex": "#C19A6B",
+                "name": "camel"
+            },
+            {
+                "hex": "#2C5F2D",
+                "name": "forest green"
+            },
+            {
+                "hex": "#722F37",
+                "name": "burgundy"
+            },
+            {
+                "hex": "#D2B48C",
+                "name": "tan"
+            }
+        ]
+    },
+    {
+        "id": "bauhaus",
+        "name": "bauhaus",
+        "description": "The Bauhaus school, founded by architect Walter Gropius in Weimar in 1919, was one of the most consequential creative institutions of the twentieth century. Its central premise was radical for the time: that art, craft, and industrial production were not separate disciplines but facets of a unified creative practice. Students moved through foundational courses in color theory, materials, and form before specializing in workshops that ranged from weaving and pottery to typography and architecture. The school relocated to Dessau in 1925 and finally to Berlin before the Nazis forced its closure in 1933, but its fourteen years of operation permanently rewired how designers think about the relationship between aesthetics and function.\n\nThe faculty roster reads like a catalog of early modernism's greatest figures. Wassily Kandinsky taught color theory through the lens of abstraction, Paul Klee explored the grammar of visual composition, and L\u00c3\u00a1szl\u00c3\u00b3 Moholy-Nagy pushed photography and light as legitimate artistic media. Marcel Breuer, initially a student, revolutionized furniture design with his tubular steel Wassily Chair. Ludwig Mies van der Rohe, the school's final director, went on to define the glass-and-steel vocabulary of postwar architecture. Each brought a distinct sensibility, but all shared the conviction that good design should be accessible, reproducible, and honest about its materials.\n\nThe Bauhaus legacy is everywhere in the built environment today. Its emphasis on geometric simplicity, primary colors, and sans-serif typography became the default language of modernist graphic design. The grid-based layouts of contemporary web design, the clean lines of IKEA furniture, the stark functionality of modern architecture all trace their DNA back to those workshops in Weimar and Dessau. The school proved that stripping away ornament does not mean stripping away meaning, and that the most democratic design is often the most essential.",
+        "tags": [
+            "minimal",
+            "geometric",
+            "architectural",
+            "bold",
+            "mid-century"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Bauhaus"
+            },
+            {
+                "label": "Bauhaus Dessau Foundation",
+                "url": "https://www.bauhaus-dessau.de/en/"
+            }
+        ],
+        "notes": "Images from Wikimedia Commons: Bauhaus Dessau building, Kandinsky Composition VIII (1923), Marcel Breuer Wassily Chair, Bauhaus logo by Oskar Schlemmer.",
+        "createdAt": "2026-03-22T21:44:03.278Z",
+        "updatedAt": "2026-03-22T23:05:11.871Z",
+        "colors": [
+            {
+                "hex": "#DD0100",
+                "name": "gropius red"
+            },
+            {
+                "hex": "#0047AB",
+                "name": "kandinsky blue"
+            },
+            {
+                "hex": "#FFD700",
+                "name": "klee yellow"
+            },
+            {
+                "hex": "#1A1A1A",
+                "name": "workshop black"
+            },
+            {
+                "hex": "#F5F5F0",
+                "name": "bauhaus white"
+            }
+        ]
+    },
+    {
+        "id": "art-nouveau",
+        "name": "art nouveau",
+        "description": "Art Nouveau erupted across Europe in the 1890s as a full-throated rejection of the mechanical ugliness that industrialization had imposed on everyday life. Where factories produced straight lines and right angles, Art Nouveau artists answered with whiplash curves, tendrils, and the sinuous geometry of growing things. The movement drew its formal vocabulary from the natural world, from the spiral of a fern frond to the iridescent wing of a dragonfly, and applied it to everything from architecture and furniture to jewelry, posters, and glassware. It was an attempt to dissolve the boundary between fine art and decorative art, to make beauty inseparable from utility.\n\nThe movement produced towering figures across every medium. Alphonse Mucha's theatrical posters for Sarah Bernhardt, with their haloed women wreathed in organic ornament, defined the graphic language of the era. Hector Guimard's cast-iron Paris Metro entrances turned infrastructure into sculpture, their green tendrils becoming permanent landmarks of the city. Antoni Gaudi pushed the style toward visionary extremes in Barcelona, where Casa Batllo's undulating facade and bone-like columns suggest a building that grew rather than was built. Louis Comfort Tiffany translated the same organic sensibility into stained glass, his lamps and windows rendering wisteria and peacock feathers in luminous color.\n\nArt Nouveau burned intensely but briefly, largely exhausted by 1910 as tastes shifted toward the cleaner geometries of Art Deco and early modernism. Yet its influence runs deep. It established the idea that the totality of a designed environment matters, that a doorknob and a facade belong to the same aesthetic conversation. Its commitment to craft over mass production anticipated later movements from Arts and Crafts to contemporary artisanal design. And its sheer visual exuberance, that insistence on beauty as a right rather than a luxury, continues to seduce anyone who encounters a Mucha poster or steps beneath a Guimard canopy.",
+        "tags": [
+            "ornate",
+            "nature",
+            "architectural",
+            "handcraft"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Art_Nouveau"
+            },
+            {
+                "label": "V&A Art Nouveau",
+                "url": "https://www.vam.ac.uk/articles/art-nouveau"
+            }
+        ],
+        "notes": "Images from Wikimedia Commons: Alphonse Mucha Gismonda poster (1894), Hector Guimard Paris Metro entrance at Pasteur, Casa Batllo by Gaudi, Tiffany Pond Lily Lamp (c. 1906-1910).",
+        "createdAt": "2026-03-22T21:44:29.760Z",
+        "updatedAt": "2026-03-22T23:05:12.439Z",
+        "colors": [
+            {
+                "hex": "#2D5A27",
+                "name": "absinthe green"
+            },
+            {
+                "hex": "#C5A34E",
+                "name": "gilded honey"
+            },
+            {
+                "hex": "#6B3A2A",
+                "name": "mahogany vine"
+            },
+            {
+                "hex": "#1A6B6A",
+                "name": "peacock teal"
+            },
+            {
+                "hex": "#D4C4A0",
+                "name": "ivory parchment"
+            },
+            {
+                "hex": "#8B4E8B",
+                "name": "wisteria dusk"
+            }
+        ]
+    },
+    {
+        "id": "synthwave",
+        "name": "synthwave",
+        "description": "Synthwave is a contemporary electronic music genre and visual aesthetic built on earnest, almost devotional nostalgia for a version of the 1980s that never quite existed. Emerging in the mid-2000s from French and American electronic producers, the sound layers analog synthesizer pads, gated reverb drums, and driving arpeggios into something that feels like a soundtrack for a VHS tape playing in an infinite loop. The visual dimension is inseparable from the music: neon grid horizons receding into a glowing sunset, chrome-beveled typography, wireframe mountains, and the unmistakable silhouette of a DeLorean DMC-12 tearing through a digital landscape at impossible speed.\n\nThe aesthetic crystallized in mainstream culture through Nicolas Winding Refn's 2011 film Drive, whose pink cursive title card and Kavinsky-scored nighttime Los Angeles became a shorthand for cool. Hotline Miami's top-down ultraviolence bathed in fluorescent color pushed the look into gaming. Unlike vaporwave, its frequent companion and occasional rival, synthwave does not approach the 1980s with irony or critique. Where vaporwave slows down and distorts corporate smooth jazz to expose the hollow promise of consumer capitalism, synthwave plays the era's excess completely straight, celebrating the chrome, the speed, and the neon as genuinely aspirational. Both movements mine the same decade, but synthwave is the one that actually wants to live there.\n\nThe visual palette is remarkably consistent across the genre: hot magenta and electric cyan gradients bleeding into deep purple, set against pure black. Palm trees become geometric silhouettes against impossible sunsets. Chrome text catches light from sources that exist outside the frame. The horizon line, usually a perspective grid stretching to infinity, suggests both limitless possibility and the uncanny flatness of a rendered world. It is an aesthetic of surfaces and speed, of a future imagined from the past, endlessly approaching but never arriving.",
+        "tags": [
+            "retro",
+            "neon",
+            "nostalgic",
+            "1980s"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Synthwave"
+            }
+        ],
+        "notes": "Images from Wikimedia Commons: 1982 DeLorean DMC-12 (iconic synthwave vehicle), Las Vegas neon boulevard at night (NARA), palm tree sunset silhouette in Bali. Synthwave is difficult to source from Wikimedia since it is primarily a digital-native aesthetic.",
+        "createdAt": "2026-03-22T21:44:52.501Z",
+        "updatedAt": "2026-03-22T23:05:13.055Z",
+        "colors": [
+            {
+                "hex": "#FF1493",
+                "name": "neon magenta"
+            },
+            {
+                "hex": "#00BFFF",
+                "name": "electric cyan"
+            },
+            {
+                "hex": "#FF6B35",
+                "name": "sunset chrome"
+            },
+            {
+                "hex": "#7B2FBE",
+                "name": "grid purple"
+            },
+            {
+                "hex": "#0D0D0D",
+                "name": "void black"
+            },
+            {
+                "hex": "#FF0066",
+                "name": "laser pink"
+            }
+        ]
+    },
+    {
+        "id": "afrofuturism",
+        "name": "afrofuturism",
+        "description": "Afrofuturism is a cultural and artistic movement that fuses African diaspora traditions with speculative fiction, technology, and cosmic imagination. Born from the recognition that mainstream science fiction had largely excluded Black narratives, Afrofuturism reclaims the future as a space where African heritage and futuristic vision coexist. Sun Ra, the avant-garde jazz composer who claimed to be from Saturn, was among the earliest architects of this sensibility, wrapping his Arkestra in shimmering robes and Egyptian headdresses while producing music that sounded like transmissions from another dimension. Octavia Butler extended the project into literature, crafting novels where Black protagonists navigated alien worlds and deep time with an unflinching eye toward power, survival, and transformation.\n\nThe visual and sonic language of Afrofuturism draws from an extraordinary range of sources: ancient Kemetic iconography, Dogon cosmology, funk and techno, comic book mythology, and the real history of the African diaspora. Parliament-Funkadelic turned concert stages into launchpads, landing their Mothership prop amid fog and lights while George Clinton preached liberation through groove. Decades later, the Marvel film Black Panther crystallized Afrofuturist aesthetics for a global audience, imagining Wakanda as a technologically advanced African nation untouched by colonialism. Janelle Monae continued the lineage with her Metropolis suites, inhabiting the persona of an android fighting for freedom in a dystopian future.\n\nWhat makes Afrofuturism endure is its insistence that the past, present, and future are not separate but braided together. It refuses the colonial narrative that positions Africa as pre-technological, instead revealing the deep mathematical, astronomical, and architectural knowledge embedded in African civilizations. The aesthetic is regal and cosmic at once, pairing gold and deep violet with the black of outer space, treating every surface as a potential portal between ancestral memory and interstellar possibility.",
+        "tags": [
+            "futuristic",
+            "bold",
+            "optimistic",
+            "eclectic"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://en.wikipedia.org/wiki/Afrofuturism",
+                "title": "Wikipedia: Afrofuturism"
+            }
+        ],
+        "notes": "Images: Sun Ra 1973 publicity photo, P-Funk Mothership at NMAAHC, Serengeti Cyborg by Fanuel Leul, Remember To Rise mural. All from Wikimedia Commons.",
+        "createdAt": "2026-03-22T21:45:09.497Z",
+        "updatedAt": "2026-03-22T23:05:13.576Z",
+        "colors": [
+            {
+                "hex": "#D4AF37",
+                "name": "pharaoh gold"
+            },
+            {
+                "hex": "#4A0E5C",
+                "name": "cosmic violet"
+            },
+            {
+                "hex": "#1E90FF",
+                "name": "electric blue"
+            },
+            {
+                "hex": "#5C3A1E",
+                "name": "earth brown"
+            },
+            {
+                "hex": "#0D0D0D",
+                "name": "void black"
+            },
+            {
+                "hex": "#B8860B",
+                "name": "ankh bronze"
+            }
+        ]
+    },
+    {
+        "id": "psychedelia",
+        "name": "psychedelia",
+        "description": "Psychedelic art emerged in the mid-1960s as the visual arm of a countercultural explosion centered in San Francisco, where LSD, rock music, and anti-war politics collided to produce one of the most distinctive graphic movements of the twentieth century. The San Francisco poster artists, particularly Wes Wilson, Victor Moscoso, Rick Griffin, Alton Kelley, and Stanley Mouse, developed a style that was almost impossible to read and entirely impossible to ignore. Drawing heavily from Art Nouveau, particularly the sinuous line work of Alphonse Mucha and the Vienna Secession, they warped typography until letters melted into organic forms, vibrated against clashing color fields, and forced the viewer to slow down and decode the message, mirroring the perceptual shifts of the psychedelic experience itself.\n\nThe palette was deliberately confrontational. Victor Moscoso, trained in color theory at Yale under Josef Albers, weaponized the principle of simultaneous contrast, placing complementary colors at equal intensity so they appeared to vibrate and pulse on the page. Acid greens bled into electric purples, hot oranges crashed against fuchsias, and nothing sat still. This visual language extended beyond posters into album covers for Cream, Jimi Hendrix, and the Grateful Dead, into the liquid light shows projected behind bands at the Fillmore and Avalon Ballroom, and into the op art patterns that turned gallery walls into breathing surfaces. The influence of Bridget Riley and other op artists fed directly into the psychedelic toolkit, providing geometric frameworks that could be distorted into hallucinatory depth.\n\nPsychedelic design was fundamentally about dissolving boundaries: between figure and ground, between text and image, between the viewer and the viewed. It rejected the clean Swiss modernism that dominated corporate design, opting instead for maximum saturation, maximum complexity, and a deliberate illegibility that functioned as a cultural filter. If you could read the poster, you were already part of the tribe. The aesthetic spread from San Francisco to London, from concert halls to head shops, from underground newspapers to eventually mainstream advertising, losing its radical edge but leaving behind a permanent expansion of what graphic design could look and feel like.",
+        "tags": [
+            "bold",
+            "surreal",
+            "retro",
+            "eclectic"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://en.wikipedia.org/wiki/Psychedelic_art",
+                "title": "Wikipedia: Psychedelic art"
+            }
+        ],
+        "notes": "Images: Victor Moscoso portrait, Henrique Matos op art optical motion piece, Bridget Riley Bolt of Colour installation. All from Wikimedia Commons.",
+        "createdAt": "2026-03-22T21:45:35.198Z",
+        "updatedAt": "2026-03-22T23:05:14.151Z",
+        "colors": [
+            {
+                "hex": "#39FF14",
+                "name": "acid green"
+            },
+            {
+                "hex": "#8B00FF",
+                "name": "electric purple"
+            },
+            {
+                "hex": "#FF4500",
+                "name": "hot orange"
+            },
+            {
+                "hex": "#FF00FF",
+                "name": "fuchsia"
+            },
+            {
+                "hex": "#FFD700",
+                "name": "vibrant yellow"
+            },
+            {
+                "hex": "#FF1493",
+                "name": "deep pink"
+            }
+        ]
+    },
+    {
+        "id": "grunge",
+        "name": "grunge",
+        "description": "Grunge as an aesthetic emerged from the Pacific Northwest in the late 1980s, a visual and cultural language forged in the rain-soaked basements and thrift stores of Seattle. Before it was a genre label applied to Nirvana, Soundgarden, and Pearl Jam, grunge was an attitude toward design: a refusal of polish, a rejection of the slick corporate aesthetics that dominated the Reagan era. The clothing was anti-fashion by necessity and then by principle, layering flannel shirts over torn band tees, pairing combat boots with thermal underwear, treating the Goodwill rack as both wardrobe and statement. Sub Pop Records, the label that launched Nirvana and Mudhoney, cultivated this roughness deliberately, using photocopied flyers, hand-stamped logos, and lo-fi photography that looked like it had been developed in a bathtub.\n\nThe graphic design of grunge found its most articulate champion in David Carson, whose work at Ray Gun magazine from 1992 to 1995 turned typographic conventions inside out. Carson set entire interviews in Zapf Dingbats, ran text columns at impossible angles, overlapped images until they became abstract textures, and treated the page as a surface for collision rather than communication. This was not incompetence but a deliberate assault on the idea that design should be transparent and serve the content. In grunge typography, the medium was the message: the distressed letterforms, the xerox artifacts, the ink bleed and paper grain all communicated a worldview that valued authenticity over professionalism, raw expression over clean delivery.\n\nThe grunge aesthetic was rooted in zine culture, the DIY publishing tradition where anyone with access to a photocopier could become a media producer. Zines like Sniffin Glue, Bikini Kill, and countless unnamed local productions established the visual grammar: cut-and-paste layouts, handwritten marginalia, deliberately crude illustrations, and a punk insistence that production values were a barrier to honest expression. The color palette reflected this ethos, favoring the muted earth tones of thrift store clothing and recycled paper: dirty olive drab, washed-out burgundy, the faded black of a t-shirt washed a hundred times, and the warm brown of unbleached kraft paper. It was an aesthetic of deliberate ugliness that revealed, by contrast, how much mainstream design existed to reassure rather than challenge.",
+        "tags": [
+            "dark",
+            "textured",
+            "retro",
+            "1990s"
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://en.wikipedia.org/wiki/Grunge",
+                "title": "Wikipedia: Grunge"
+            }
+        ],
+        "notes": "Images: Mudhoney live 2007, Nirvana Blew single (Sub Pop), Deep Six compilation ad from The Rocket 1986, Andrew Wood of Mother Love Bone. All from Wikimedia Commons.",
+        "createdAt": "2026-03-22T21:46:20.070Z",
+        "updatedAt": "2026-03-22T23:05:14.775Z",
+        "colors": [
+            {
+                "hex": "#4A4A2E",
+                "name": "dirty olive"
+            },
+            {
+                "hex": "#6B2D3E",
+                "name": "washed burgundy"
+            },
+            {
+                "hex": "#1A1A1A",
+                "name": "faded black"
+            },
+            {
+                "hex": "#8B7355",
+                "name": "kraft brown"
+            },
+            {
+                "hex": "#6B6B6B",
+                "name": "concrete gray"
+            },
+            {
+                "hex": "#8B4513",
+                "name": "thrift flannel"
+            }
+        ]
+    },
+    {
+        "id": "cassette-futurism",
+        "name": "cassette futurism",
+        "description": "Cassette futurism, sometimes called formicapunk, is the aesthetic of a future that never quite arrived \u00e2\u20ac\u201d one built from chunky toggle switches, flickering CRT phosphor, and the satisfying clunk of physical buttons. It draws from the analog sci-fi interfaces of the 1970s and 1980s, when spacecraft cockpits looked like recording studios and computer terminals glowed with single-color text on dark screens. Think the Nostromo bridge from Alien (1979), the warm amber readouts of HAL 9000 in 2001: A Space Odyssey, the overwhelming instrument panels of the Space Shuttle and Concorde, and the beige plastic casings of early IBM PCs and DEC terminals.\n\nThis is technology imagined before the invention of touchscreens and flat panels \u00e2\u20ac\u201d a world where interfaces were physical, tactile, and slightly dangerous. Every function had its own dedicated switch or knob. Displays were convex, their scan lines visible if you looked closely. The color palette was dictated by phosphor chemistry: green P1, amber P3, and the rare blue P11. Status was communicated through rows of incandescent indicator lights rather than pixel-perfect icons.\n\nThe appeal of cassette futurism lies in its tangibility. These machines had weight and presence. You could hear them working \u00e2\u20ac\u201d the hum of CRT flyback transformers, the click of relay switches, the whir of tape drives. In an era of seamless glass slabs and invisible computing, there is something deeply comforting about technology that announces itself, that occupies physical space, and that invites you to reach out and flip a switch.",
+        "tags": [
+            "retro",
+            "futuristic",
+            "tech",
+            "nostalgic"
+        ],
+        "colors": [
+            {
+                "hex": "#D4840F",
+                "name": "crt amber"
+            },
+            {
+                "hex": "#33FF33",
+                "name": "terminal green"
+            },
+            {
+                "hex": "#D9D0BC",
+                "name": "plastic beige"
+            },
+            {
+                "hex": "#2B2B2B",
+                "name": "instrument charcoal"
+            },
+            {
+                "hex": "#8A8279",
+                "name": "warm gray"
+            },
+            {
+                "hex": "#1A1A1A",
+                "name": "screen black"
+            }
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://en.wikipedia.org/wiki/Cassette_futurism",
+                "label": "Wikipedia \u00ef\u00bf\u00bd Cassette Futurism"
+            },
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Cassette_Futurism",
+                "label": "Aesthetics Wiki \u00ef\u00bf\u00bd Cassette Futurism"
+            }
+        ],
+        "notes": "Also known as formicapunk. Key reference points: Alien (1979), 2001: A Space Odyssey (1968), Blade Runner (1982), the Space Shuttle program, Concorde cockpit, early IBM PC and DEC VT100 terminals.",
+        "createdAt": "2026-03-22T21:47:45.470Z",
+        "updatedAt": "2026-03-22T23:05:15.285Z"
+    },
+    {
+        "id": "corporate-memphis",
+        "name": "corporate memphis",
+        "description": "Corporate Memphis \u00e2\u20ac\u201d named after the Memphis Group but sharing little of its anarchic spirit \u00e2\u20ac\u201d is the flat, geometric illustration style that colonized tech company marketing from roughly 2017 to 2023. Also called Alegria after the Facebook illustration system that popularized it, the style is instantly recognizable: disproportionate human figures with oversized limbs and tiny heads, skin rendered in unnatural blues and purples, bendy noodle arms reaching toward abstract representations of productivity. Every scene radiates an enforced, frictionless cheerfulness. Nobody in a Corporate Memphis illustration has ever encountered a bug, missed a deadline, or read the terms of service.\n\nThe style emerged from a genuine design problem \u00e2\u20ac\u201d how to make global tech products feel warm and human without defaulting to photography that would inevitably exclude someone. The solution was to abstract humanity itself: purple skin cannot belong to any specific ethnicity, and limbless hands holding smartphones represent all of us equally. Facebook, Airbnb, Google, Slack, Hinge, Lyft, and dozens of other companies adopted nearly identical illustration systems within a few years. The visual language became so ubiquitous that competitor brands became indistinguishable from one another, unified by the same muted-but-bright palette and the same boneless bodies floating through the same featureless spaces.\n\nThe backlash was inevitable and fierce. Critics called it the aesthetic equivalent of corporate doublespeak \u00e2\u20ac\u201d a visual language designed to feel approachable while communicating nothing. It became a symbol of Silicon Valley homogeneity, the design equivalent of an open-plan office with a ping-pong table. By the early 2020s, Corporate Memphis had become so associated with bland corporate optimism that its presence in a marketing campaign was itself a punchline. Its decline coincided with the rise of AI-generated imagery and a broader return to photography and more textured illustration styles in tech branding.",
+        "tags": [
+            "playful",
+            "glossy",
+            "bold",
+            "2000s"
+        ],
+        "colors": [
+            {
+                "hex": "#4A6CF7",
+                "name": "flat blue"
+            },
+            {
+                "hex": "#F2725C",
+                "name": "coral"
+            },
+            {
+                "hex": "#B8A9E8",
+                "name": "lavender"
+            },
+            {
+                "hex": "#FFC940",
+                "name": "warm yellow"
+            },
+            {
+                "hex": "#2BBCB3",
+                "name": "teal"
+            },
+            {
+                "hex": "#6B5CE7",
+                "name": "muted purple"
+            }
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://en.wikipedia.org/wiki/Corporate_Memphis",
+                "label": "Wikipedia \u00ef\u00bf\u00bd Corporate Memphis"
+            },
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Corporate_Memphis",
+                "label": "Aesthetics Wiki \u00ef\u00bf\u00bd Corporate Memphis"
+            },
+            {
+                "url": "https://en.wikipedia.org/wiki/Alegria_(design_system)",
+                "label": "Wikipedia \u00ef\u00bf\u00bd Alegria design system"
+            }
+        ],
+        "notes": "Also called Alegria (after Facebook/Meta's illustration system) or Big Tech art style. The style was widely parodied by 2021-2022. Wikimedia Commons does have Corporate Memphis examples (File:Corporate_Memphis_(2019).jpg) but image downloads were unavailable during creation. Key examples: Facebook/Meta Alegria system, Google Workspace illustrations, Slack marketing, Airbnb illustration guidelines.",
+        "createdAt": "2026-03-22T21:48:13.579Z",
+        "updatedAt": "2026-03-22T23:05:15.812Z"
+    },
+    {
+        "id": "maximalism",
+        "name": "maximalism",
+        "description": "Maximalism is the deliberate, joyful rejection of \"less is more\" in favor of \"more is more, and then some.\" Where minimalism strips away until only the essential remains, maximalism layers on \u00e2\u20ac\u201d pattern over pattern, texture against texture, color saturating every available surface. It is ornamental excess elevated to philosophy, the belief that a room, a garment, or a composition is not finished until it overwhelms the eye and dares you to look away. It has roots in the Baroque and Rococo periods, where churches dripped with gilt and palaces competed to out-dazzle one another, but it has resurfaced in every era that grows tired of restraint.\n\nIn its modern expression, maximalism threads through fashion, interior design, and visual culture. Alessandro Michele's tenure at Gucci (2015-2022) became a case study in maximalist fashion \u00e2\u20ac\u201d clashing prints, embroidered snakes, layered jewelry, and the conviction that a floral jacket needs a floral shirt underneath it. In interiors, the philosophy manifests as the Versace Home sensibility or the legendary apartment of Iris Apfel: rooms where every surface tells a story, where a Moroccan rug meets a chinoiserie vase meets a neon art piece and somehow the conversation works. The Versailles Hall of Mirrors, the Shah Mosque in Isfahan, the Alhambra \u00e2\u20ac\u201d these are maximalism's historical cathedrals, spaces where geometry, color, and craft conspire to produce an effect that transcends decoration and approaches the transcendent.\n\nMaximalism pushes back against the sterility that minimalism can breed \u00e2\u20ac\u201d the all-white gallery, the featureless tech office, the apartment that looks like a render. It argues that human spaces should be dense with meaning, that objects carry stories, and that visual richness is not clutter but a form of generosity. At its best, maximalism is curated chaos \u00e2\u20ac\u201d not the absence of taste but its surplus, a deliberate composition that happens to contain multitudes.",
+        "tags": [
+            "ornate",
+            "bold",
+            "eclectic",
+            "playful"
+        ],
+        "colors": [
+            {
+                "hex": "#0F6B3A",
+                "name": "emerald"
+            },
+            {
+                "hex": "#9B1B30",
+                "name": "ruby"
+            },
+            {
+                "hex": "#1E3A6D",
+                "name": "sapphire"
+            },
+            {
+                "hex": "#D4A843",
+                "name": "gold"
+            },
+            {
+                "hex": "#C7266A",
+                "name": "fuchsia"
+            },
+            {
+                "hex": "#5B2E8C",
+                "name": "amethyst"
+            }
+        ],
+        "heroImage": null,
+        "images": [],
+        "links": [
+            {
+                "url": "https://en.wikipedia.org/wiki/Maximalism",
+                "label": "Wikipedia \u00ef\u00bf\u00bd Maximalism"
+            },
+            {
+                "url": "https://aesthetics.fandom.com/wiki/Maximalism",
+                "label": "Aesthetics Wiki \u00ef\u00bf\u00bd Maximalism"
+            }
+        ],
+        "notes": "Key reference points: Versailles Hall of Mirrors, Shah Mosque Isfahan, Alhambra palace, Gucci under Alessandro Michele (2015-2022), Iris Apfel, Versace Home, Baroque and Rococo architecture. The philosophical opposite of minimalism.",
+        "createdAt": "2026-03-22T21:48:44.657Z",
+        "updatedAt": "2026-03-22T23:05:16.415Z"
+    }
+]
