@@ -7,7 +7,6 @@ let editingAura = null;
 let editorImages = [];
 let editorHeroImage = null;
 let editorLinks = [];
-let isAuthed = false;
 
 // elements
 const gridView = document.getElementById('grid-view');
@@ -20,11 +19,6 @@ const searchInput = document.getElementById('search-input');
 const addAuraBtn = document.getElementById('add-aura-btn');
 const editAuraBtn = document.getElementById('edit-aura-btn');
 const backBtn = document.getElementById('back-btn');
-const authBtn = document.getElementById('auth-btn');
-const authModal = document.getElementById('auth-modal');
-const authKeyInput = document.getElementById('auth-key-input');
-const authSubmitBtn = document.getElementById('auth-submit');
-const authCancelBtn = document.getElementById('auth-cancel');
 const editorCancel = document.getElementById('editor-cancel');
 const editorSave = document.getElementById('editor-save');
 const editorName = document.getElementById('editor-name');
@@ -37,14 +31,6 @@ const editorLinkList = document.getElementById('editor-link-list');
 const addLinkBtn = document.getElementById('add-link-btn');
 
 // helpers
-
-function getAdminKey() {
-  return localStorage.getItem('aurabook_admin_key') || '';
-}
-
-function adminHeaders() {
-  return { 'Authorization': `Bearer ${getAdminKey()}`, 'Content-Type': 'application/json' };
-}
 
 function slugify(text) {
   return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -59,13 +45,6 @@ function showView(view) {
   detailView.classList.add('hidden');
   editorView.classList.add('hidden');
   view.classList.remove('hidden');
-}
-
-function updateAdminUI() {
-  document.querySelectorAll('.admin-only').forEach(el => {
-    el.classList.toggle('hidden', !isAuthed);
-  });
-  authBtn.textContent = isAuthed ? '[logout]' : '[login]';
 }
 
 // api
@@ -87,11 +66,11 @@ async function fetchAura(id) {
 }
 
 async function saveAura(aura, isNew) {
-  const url = isNew ? `${API_URL}/admin/auras` : `${API_URL}/admin/auras/${aura.id}`;
+  const url = isNew ? `${API_URL}/auras` : `${API_URL}/auras/${aura.id}`;
   const method = isNew ? 'POST' : 'PUT';
   const res = await fetch(url, {
     method,
-    headers: adminHeaders(),
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(aura),
   });
   if (!res.ok) {
@@ -102,31 +81,18 @@ async function saveAura(aura, isNew) {
 }
 
 async function deleteAura(id) {
-  const res = await fetch(`${API_URL}/admin/auras/${id}`, {
-    method: 'DELETE',
-    headers: adminHeaders(),
-  });
+  const res = await fetch(`${API_URL}/auras/${id}`, { method: 'DELETE' });
   if (!res.ok) throw new Error('failed to delete');
 }
 
 async function uploadImage(file) {
-  const res = await fetch(`${API_URL}/admin/images`, {
+  const res = await fetch(`${API_URL}/images`, {
     method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${getAdminKey()}`,
-      'Content-Type': file.type,
-    },
+    headers: { 'Content-Type': file.type },
     body: file,
   });
   if (!res.ok) throw new Error('failed to upload image');
   return await res.json();
-}
-
-async function deleteImage(id) {
-  await fetch(`${API_URL}/admin/images/${id}`, {
-    method: 'DELETE',
-    headers: adminHeaders(),
-  });
 }
 
 // render grid
@@ -201,27 +167,22 @@ async function openDetail(id) {
     html += `<div class="detail-notes">${escapeHtml(currentAura.notes)}</div>`;
   }
 
-  if (isAuthed) {
-    html += `<button type="button" class="text-btn" id="delete-aura-btn" style="color:#c44;margin-top:20px">[delete this aura]</button>`;
-  }
+  html += `<button type="button" class="text-btn" id="delete-aura-btn" style="color:#c44;margin-top:20px">[delete this aura]</button>`;
 
   detailContent.innerHTML = html;
   showView(detailView);
 
-  const deleteBtn = document.getElementById('delete-aura-btn');
-  if (deleteBtn) {
-    deleteBtn.addEventListener('click', async () => {
-      if (!confirm('delete this aura?')) return;
-      try {
-        await deleteAura(currentAura.id);
-        auras = auras.filter(a => a.id !== currentAura.id);
-        renderGrid();
-        showView(gridView);
-      } catch (e) {
-        alert(e.message);
-      }
-    });
-  }
+  document.getElementById('delete-aura-btn').addEventListener('click', async () => {
+    if (!confirm('delete this aura?')) return;
+    try {
+      await deleteAura(currentAura.id);
+      auras = auras.filter(a => a.id !== currentAura.id);
+      renderGrid();
+      showView(gridView);
+    } catch (e) {
+      alert(e.message);
+    }
+  });
 }
 
 // editor
@@ -309,7 +270,6 @@ async function handleSave() {
   editorSave.textContent = '[saving...]';
   try {
     const saved = await saveAura(aura, !editingAura);
-    // update local index
     const idx = auras.findIndex(a => a.id === saved.id);
     const indexEntry = { id: saved.id, name: saved.name, heroImage: saved.heroImage, tags: saved.tags };
     if (idx >= 0) {
@@ -323,39 +283,6 @@ async function handleSave() {
     alert(e.message);
   }
   editorSave.textContent = '[save]';
-}
-
-// auth
-
-function checkAuth() {
-  const key = getAdminKey();
-  isAuthed = !!key;
-  updateAdminUI();
-}
-
-function showAuthModal() {
-  authKeyInput.value = '';
-  authModal.classList.remove('hidden');
-  authKeyInput.focus();
-}
-
-function hideAuthModal() {
-  authModal.classList.add('hidden');
-}
-
-function handleLogin() {
-  const key = authKeyInput.value.trim();
-  if (!key) return;
-  localStorage.setItem('aurabook_admin_key', key);
-  isAuthed = true;
-  updateAdminUI();
-  hideAuthModal();
-}
-
-function handleLogout() {
-  localStorage.removeItem('aurabook_admin_key');
-  isAuthed = false;
-  updateAdminUI();
 }
 
 // utils
@@ -376,24 +303,10 @@ searchInput.addEventListener('input', () => {
   renderGrid(searchInput.value.toLowerCase().trim());
 });
 
-backBtn.addEventListener('click', () => {
-  showView(gridView);
-});
-
+backBtn.addEventListener('click', () => showView(gridView));
 addAuraBtn.addEventListener('click', () => openEditor(null));
-
-editAuraBtn.addEventListener('click', () => {
-  if (currentAura) openEditor(currentAura);
-});
-
-editorCancel.addEventListener('click', () => {
-  if (currentAura) {
-    showView(detailView);
-  } else {
-    showView(gridView);
-  }
-});
-
+editAuraBtn.addEventListener('click', () => { if (currentAura) openEditor(currentAura); });
+editorCancel.addEventListener('click', () => showView(currentAura ? detailView : gridView));
 editorSave.addEventListener('click', handleSave);
 
 addLinkBtn.addEventListener('click', () => {
@@ -415,26 +328,9 @@ editorImageUpload.addEventListener('change', async (e) => {
   editorImageUpload.value = '';
 });
 
-authBtn.addEventListener('click', () => {
-  if (isAuthed) {
-    handleLogout();
-  } else {
-    showAuthModal();
-  }
-});
-
-authSubmitBtn.addEventListener('click', handleLogin);
-authCancelBtn.addEventListener('click', hideAuthModal);
-authModal.querySelector('.modal-backdrop').addEventListener('click', hideAuthModal);
-
-authKeyInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') handleLogin();
-});
-
 // init
 
 async function init() {
-  checkAuth();
   auras = await fetchAuras();
   renderGrid();
 }

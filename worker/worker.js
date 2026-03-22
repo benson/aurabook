@@ -6,7 +6,7 @@ function corsHeaders(request) {
   return {
     'Access-Control-Allow-Origin': allowed,
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Allow-Headers': 'Content-Type',
   };
 }
 
@@ -15,11 +15,6 @@ function json(data, status = 200, request = null) {
     status,
     headers: { 'Content-Type': 'application/json', ...corsHeaders(request) },
   });
-}
-
-function isAdmin(request, env) {
-  const auth = request.headers.get('Authorization');
-  return auth === `Bearer ${env.ADMIN_SECRET}`;
 }
 
 function generateId() {
@@ -41,13 +36,13 @@ export default {
     const method = request.method;
 
     try {
-      // public: GET /auras
+      // GET /auras
       if (method === 'GET' && path === '/auras') {
         const index = await env.AURAS.get('auras:index', 'json') || [];
         return json(index, 200, request);
       }
 
-      // public: GET /auras/:id
+      // GET /auras/:id
       if (method === 'GET' && path.startsWith('/auras/')) {
         const id = path.split('/auras/')[1];
         const aura = await env.AURAS.get(`aura:${id}`, 'json');
@@ -55,7 +50,7 @@ export default {
         return json(aura, 200, request);
       }
 
-      // public: GET /images/:id
+      // GET /images/:id
       if (method === 'GET' && path.startsWith('/images/')) {
         const id = path.split('/images/')[1];
         const { value, metadata } = await env.AURAS.getWithMetadata(`img:${id}`, 'arrayBuffer');
@@ -69,9 +64,8 @@ export default {
         });
       }
 
-      // admin: POST /admin/auras
-      if (method === 'POST' && path === '/admin/auras') {
-        if (!isAdmin(request, env)) return json({ error: 'unauthorized' }, 401, request);
+      // POST /auras
+      if (method === 'POST' && path === '/auras') {
         const body = await request.json();
         const id = slugify(body.name || '');
         if (!id) return json({ error: 'name is required' }, 400, request);
@@ -95,7 +89,6 @@ export default {
 
         await env.AURAS.put(`aura:${id}`, JSON.stringify(aura));
 
-        // update index
         const index = await env.AURAS.get('auras:index', 'json') || [];
         index.push({ id: aura.id, name: aura.name, heroImage: aura.heroImage, tags: aura.tags });
         await env.AURAS.put('auras:index', JSON.stringify(index));
@@ -103,10 +96,9 @@ export default {
         return json(aura, 200, request);
       }
 
-      // admin: PUT /admin/auras/:id
-      if (method === 'PUT' && path.startsWith('/admin/auras/')) {
-        if (!isAdmin(request, env)) return json({ error: 'unauthorized' }, 401, request);
-        const id = path.split('/admin/auras/')[1];
+      // PUT /auras/:id
+      if (method === 'PUT' && path.startsWith('/auras/')) {
+        const id = path.split('/auras/')[1];
         const existing = await env.AURAS.get(`aura:${id}`, 'json');
         if (!existing) return json({ error: 'not found' }, 404, request);
 
@@ -114,13 +106,12 @@ export default {
         const updated = {
           ...existing,
           ...body,
-          id, // keep original id
+          id,
           updatedAt: new Date().toISOString(),
         };
 
         await env.AURAS.put(`aura:${id}`, JSON.stringify(updated));
 
-        // update index
         const index = await env.AURAS.get('auras:index', 'json') || [];
         const idx = index.findIndex(a => a.id === id);
         const entry = { id: updated.id, name: updated.name, heroImage: updated.heroImage, tags: updated.tags };
@@ -130,21 +121,18 @@ export default {
         return json(updated, 200, request);
       }
 
-      // admin: DELETE /admin/auras/:id
-      if (method === 'DELETE' && path.startsWith('/admin/auras/')) {
-        if (!isAdmin(request, env)) return json({ error: 'unauthorized' }, 401, request);
-        const id = path.split('/admin/auras/')[1];
+      // DELETE /auras/:id
+      if (method === 'DELETE' && path.startsWith('/auras/')) {
+        const id = path.split('/auras/')[1];
         const aura = await env.AURAS.get(`aura:${id}`, 'json');
         if (!aura) return json({ error: 'not found' }, 404, request);
 
-        // delete images
         for (const imgId of (aura.images || [])) {
           await env.AURAS.delete(`img:${imgId}`);
         }
 
         await env.AURAS.delete(`aura:${id}`);
 
-        // update index
         const index = await env.AURAS.get('auras:index', 'json') || [];
         const filtered = index.filter(a => a.id !== id);
         await env.AURAS.put('auras:index', JSON.stringify(filtered));
@@ -152,9 +140,8 @@ export default {
         return json({ ok: true }, 200, request);
       }
 
-      // admin: POST /admin/images
-      if (method === 'POST' && path === '/admin/images') {
-        if (!isAdmin(request, env)) return json({ error: 'unauthorized' }, 401, request);
+      // POST /images
+      if (method === 'POST' && path === '/images') {
         const contentType = request.headers.get('Content-Type') || 'image/jpeg';
         const buffer = await request.arrayBuffer();
         if (!buffer.byteLength) return json({ error: 'empty body' }, 400, request);
@@ -167,10 +154,9 @@ export default {
         return json({ id }, 200, request);
       }
 
-      // admin: DELETE /admin/images/:id
-      if (method === 'DELETE' && path.startsWith('/admin/images/')) {
-        if (!isAdmin(request, env)) return json({ error: 'unauthorized' }, 401, request);
-        const id = path.split('/admin/images/')[1];
+      // DELETE /images/:id
+      if (method === 'DELETE' && path.startsWith('/images/')) {
+        const id = path.split('/images/')[1];
         await env.AURAS.delete(`img:${id}`);
         return json({ ok: true }, 200, request);
       }

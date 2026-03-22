@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://bensonperry.com/aurabook">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="https://bensonperry.com/shared/common.css">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <div class="container">
@@ -21,8 +21,7 @@
           <p class="subtitle">aesthetic reference library</p>
         </div>
         <div class="header-actions">
-          <button type="button" id="add-aura-btn" class="text-btn admin-only hidden">[+ add aura]</button>
-          <button type="button" id="auth-btn" class="text-btn">[login]</button>
+          <button type="button" id="add-aura-btn" class="text-btn">[+ add aura]</button>
         </div>
       </div>
       <div class="search-bar">
@@ -40,7 +39,7 @@
     <section id="detail-view" class="hidden">
       <div class="detail-header">
         <button type="button" id="back-btn" class="text-btn">[&larr; back]</button>
-        <button type="button" id="edit-aura-btn" class="text-btn admin-only hidden">[edit]</button>
+        <button type="button" id="edit-aura-btn" class="text-btn">[edit]</button>
       </div>
       <div id="detail-content"></div>
     </section>
@@ -89,20 +88,8 @@
       </form>
     </section>
 
-    <!-- Auth Modal -->
-    <div id="auth-modal" class="modal hidden">
-      <div class="modal-backdrop"></div>
-      <div class="modal-content">
-        <h3>admin login</h3>
-        <input type="password" id="auth-key-input" placeholder="admin key">
-        <div class="modal-actions">
-          <button type="button" id="auth-cancel" class="text-btn">[cancel]</button>
-          <button type="button" id="auth-submit" class="text-btn">[login]</button>
-        </div>
-      </div>
-    </div>
   </div>
 
-  <script src="app.js?v=1"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
