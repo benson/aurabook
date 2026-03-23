@@ -157,7 +157,9 @@ Respond with ONLY the JSON object.`
     }),
   });
   const data = await res.json();
-  const text = data.content?.[0]?.text || '{}';
+  let text = data.content?.[0]?.text || '{}';
+  // Strip markdown code fences if present
+  text = text.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
   try {
     return JSON.parse(text);
   } catch {
