@@ -222,8 +222,24 @@ async function handleTelegram(request, env) {
   // Handle photo messages
   const msg = update.message;
   if (!msg?.photo) {
+    const botToken = env.TELEGRAM_BOT_TOKEN;
     if (msg?.text === '/start') {
-      await sendMessage(msg.chat.id, 'send me a photo to add to aurabook.\n\nadd a caption to specify the aura (e.g. "vaporwave") or use "new: name" to create a new aesthetic.', env.TELEGRAM_BOT_TOKEN);
+      await sendMessage(msg.chat.id, 'send me a photo to add to aurabook.\n\nadd a caption to specify the aura (e.g. "vaporwave") or use "new: name" to create a new aesthetic.', botToken);
+      return new Response('ok');
+    }
+    // Check if we're awaiting a name for a new aura
+    const pendingQueueId = await env.AURAS.get(`pending_name:${msg.chat.id}`);
+    if (pendingQueueId && msg?.text) {
+      await env.AURAS.delete(`pending_name:${msg.chat.id}`);
+      const queueItem = await env.AURAS.get(`queue:${pendingQueueId}`, 'json');
+      if (queueItem) {
+        const newName = msg.text.trim();
+        await sendMessage(msg.chat.id, `creating "${newName}"...`, botToken);
+        const content = await generateAuraContent(newName, env.ANTHROPIC_API_KEY);
+        await createAura(newName, content, queueItem.imageId, env);
+        await env.AURAS.delete(`queue:${pendingQueueId}`);
+        await sendMessage(msg.chat.id, `created "${newName}" ✓\nhttps://bensonperry.com/aurabook#${slugify(newName)}`, botToken);
+      }
     }
     return new Response('ok');
   }
@@ -295,7 +311,10 @@ async function handleTelegram(request, env) {
   }
 
   // --- Auto-classify with Claude ---
-  const imageBase64 = btoa(String.fromCharCode(...new Uint8Array(fileData.buffer)));
+  const bytes = new Uint8Array(fileData.buffer);
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+  const imageBase64 = btoa(binary);
   let classification;
   try {
     classification = await classifyImage(imageBase64, aurasList, env.ANTHROPIC_API_KEY);
@@ -426,7 +445,7 @@ async function handleCallback(query, env) {
         callback_data: `pick:${queueId}:${a.id}`,
       })));
     }
-    rows.push([{ text: '✗ cancel', callback_data: `reject:${queueId}` }]);
+    rows.push([{ text: '+ new aura', callback_data: `newprompt:${queueId}` }, { text: '✗ cancel', callback_data: `reject:${queueId}` }]);
     await editMessage(chatId, messageId, 'pick an aura:', botToken, rows);
     await answerCallback(query.id, botToken);
   }
@@ -437,6 +456,15 @@ async function handleCallback(query, env) {
     await env.AURAS.delete(`queue:${queueId}`);
     const aura = await env.AURAS.get(`aura:${auraId}`, 'json');
     await editMessage(chatId, messageId, `added to ${aura?.name || auraId} ✓`, botToken);
+    await answerCallback(query.id, botToken);
+  }
+
+  else if (action === 'newprompt') {
+    // Mark queue item as awaiting a name, then ask the user to type it
+    queueItem.awaitingName = true;
+    await env.AURAS.put(`queue:${queueId}`, JSON.stringify(queueItem));
+    await env.AURAS.put(`pending_name:${chatId}`, queueId);
+    await editMessage(chatId, messageId, 'type the name for the new aura:', botToken);
     await answerCallback(query.id, botToken);
   }
 
