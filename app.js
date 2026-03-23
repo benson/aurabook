@@ -417,7 +417,7 @@ searchInput.addEventListener('input', () => {
   renderGrid(searchInput.value.toLowerCase().trim());
 });
 
-backBtn.addEventListener('click', () => { history.back(); });
+backBtn.addEventListener('click', () => { navigate(null); });
 addAuraBtn.addEventListener('click', () => openEditor(null));
 editAuraBtn.addEventListener('click', () => { if (currentAura) openEditor(currentAura); });
 editorCancel.addEventListener('click', () => showView(currentAura ? detailView : gridView));
