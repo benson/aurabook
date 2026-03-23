@@ -93,8 +93,8 @@ function mediaSrc(item) {
   return '';
 }
 
-// render a single hitclip's inner content
-function renderHitclipContent(item) {
+// render a single media item's thumbnail
+function renderMediaThumb(item) {
   switch (item.type) {
     case 'image':
     case 'gif':
@@ -102,55 +102,43 @@ function renderHitclipContent(item) {
 
     case 'video': {
       const vid = extractYoutubeId(item.src);
-      if (!vid) return `<div class="hitclip-link-card"><span class="hitclip-link-label">${escapeHtml(item.label || 'video')}</span></div>`;
-      return `<div class="hitclip-thumb" data-embed="https://www.youtube.com/embed/${vid}?autoplay=1">
-        <img src="https://img.youtube.com/vi/${vid}/mqdefault.jpg" alt="${escapeAttr(item.label || '')}">
-        <div class="hitclip-play">&#9654;</div>
-      </div>`;
+      if (vid) return `<img src="https://img.youtube.com/vi/${vid}/mqdefault.jpg" alt="${escapeAttr(item.label || '')}" loading="lazy">`;
+      return `<div class="media-link-card"><span class="media-link-label">${escapeHtml(item.label || 'video')}</span></div>`;
     }
 
     case 'song': {
-      const spotify = extractSpotifyId(item.src);
-      if (spotify) {
-        return `<div class="hitclip-thumb" data-embed="https://open.spotify.com/embed/${spotify.type}/${spotify.id}?theme=0">
-          <div class="hitclip-link-card" style="background:#1a1a1a;color:#1db954">
-            <span style="font-size:28px">&#9835;</span>
-            <span class="hitclip-link-label" style="color:#ccc">${escapeHtml(item.label || 'spotify')}</span>
-          </div>
-          <div class="hitclip-play">&#9654;</div>
-        </div>`;
-      }
-      return `<div class="hitclip-link-card" style="background:#f50;color:#fff">
-        <span style="font-size:28px">&#9835;</span>
-        <span class="hitclip-link-label">${escapeHtml(item.label || getDomain(item.src))}</span>
+      // use thumbnail if we have one, otherwise show a card
+      if (item.thumbnail) return `<img src="${item.thumbnail}" alt="${escapeAttr(item.label || '')}" loading="lazy">`;
+      const domain = getDomain(item.src || '');
+      return `<div class="media-link-card">
+        <img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=32" alt="">
+        <span class="media-link-label">${escapeHtml(item.label || domain)}</span>
       </div>`;
     }
 
     case 'link':
     default: {
+      if (item.thumbnail) return `<img src="${item.thumbnail}" alt="${escapeAttr(item.label || '')}" loading="lazy">`;
       const domain = getDomain(item.src || '');
-      return `<div class="hitclip-link-card">
+      return `<div class="media-link-card">
         <img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=32" alt="">
-        <span class="hitclip-link-domain">${escapeHtml(domain)}</span>
-        <span class="hitclip-link-label">${escapeHtml(item.label || '')}</span>
+        <span class="media-link-domain">${escapeHtml(domain)}</span>
+        <span class="media-link-label">${escapeHtml(item.label || '')}</span>
       </div>`;
     }
   }
 }
 
-// render media as a simple grid
-function renderMediaShelf(aura) {
+// render media as a simple grid — everything links out
+function renderMediaGrid(aura) {
   const items = getMediaItems(aura);
   if (items.length === 0) return '';
 
   let html = `<div class="media-grid">`;
   for (const item of items) {
-    const openSrc = (item.type === 'image' || item.type === 'gif') ? mediaSrc(item) : item.src;
-    const clickAction = (item.type === 'image' || item.type === 'gif' || item.type === 'link')
-      ? `onclick="window.open('${escapeAttr(openSrc || '')}', '_blank')"`
-      : '';
-    html += `<div class="media-item" data-type="${item.type}" ${clickAction}>`;
-    html += `<div class="media-item-frame">${renderHitclipContent(item)}</div>`;
+    const href = (item.type === 'image' || item.type === 'gif') ? mediaSrc(item) : (item.src || '');
+    html += `<div class="media-item" onclick="window.open('${escapeAttr(href)}', '_blank')">`;
+    html += `<div class="media-item-frame">${renderMediaThumb(item)}</div>`;
     html += `</div>`;
   }
   html += `</div>`;
@@ -267,8 +255,8 @@ async function openDetail(id) {
     html += `<div class="detail-description">${escapeHtml(currentAura.description)}</div>`;
   }
 
-  // hitclip shelf replaces old image gallery
-  html += renderMediaShelf(currentAura);
+  // media grid
+  html += renderMediaGrid(currentAura);
 
   if (currentAura.colors && currentAura.colors.length > 0) {
     html += `<div class="detail-section-title">palette</div>`;
@@ -303,16 +291,6 @@ async function openDetail(id) {
 
   detailContent.innerHTML = html;
   showView(detailView);
-
-  // lazy embed click-to-play
-  detailContent.querySelectorAll('.hitclip-thumb[data-embed]').forEach(thumb => {
-    thumb.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const src = thumb.dataset.embed;
-      const frame = thumb.closest('.media-item-frame');
-      frame.innerHTML = `<iframe src="${src}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-    });
-  });
 
   // palette copy
   detailContent.querySelectorAll('.palette-item').forEach(item => {
