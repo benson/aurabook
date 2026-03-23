@@ -4,7 +4,7 @@ const API_URL = 'https://aurabook-api.bensonperry.workers.dev';
 let auras = [];
 let currentAura = null;
 let editingAura = null;
-let editorImages = [];
+let editorMedia = [];
 let editorHeroImage = null;
 let editorLinks = [];
 let editorColors = [];
@@ -43,11 +43,118 @@ function imageUrl(id) {
   return `${API_URL}/images/${id}`;
 }
 
+function generateId() {
+  return 'med_' + Math.random().toString(36).slice(2, 10);
+}
+
 function showView(view) {
   gridView.classList.add('hidden');
   detailView.classList.add('hidden');
   editorView.classList.add('hidden');
   view.classList.remove('hidden');
+}
+
+// media helpers
+
+function detectMediaType(url) {
+  if (!url) return 'link';
+  if (/youtu\.?be(\.com)?\/(watch|embed|shorts)?/i.test(url)) return 'video';
+  if (/open\.spotify\.com\/(track|album|playlist)/i.test(url)) return 'song';
+  if (/soundcloud\.com\//i.test(url)) return 'song';
+  if (/\.gif(\?|$)/i.test(url)) return 'gif';
+  if (/\.(jpg|jpeg|png|webp)(\?|$)/i.test(url)) return 'image';
+  return 'link';
+}
+
+function extractYoutubeId(url) {
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
+function extractSpotifyId(url) {
+  const m = url.match(/open\.spotify\.com\/(track|album|playlist)\/([a-zA-Z0-9]+)/);
+  return m ? { type: m[1], id: m[2] } : null;
+}
+
+function getDomain(url) {
+  try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; }
+}
+
+// convert legacy images[] to media[]
+function getMediaItems(aura) {
+  if (aura.media && aura.media.length > 0) return aura.media;
+  return (aura.images || []).map(id => ({ type: 'image', id, src: null, label: '' }));
+}
+
+// get image source — supports KV images and external src URLs
+function mediaSrc(item) {
+  if (item.src) return item.src;
+  if (item.id) return imageUrl(item.id);
+  return '';
+}
+
+// render a single hitclip's inner content
+function renderHitclipContent(item) {
+  switch (item.type) {
+    case 'image':
+    case 'gif':
+      return `<img src="${mediaSrc(item)}" alt="${escapeAttr(item.label || '')}" loading="lazy">`;
+
+    case 'video': {
+      const vid = extractYoutubeId(item.src);
+      if (!vid) return `<div class="hitclip-link-card"><span class="hitclip-link-label">${escapeHtml(item.label || 'video')}</span></div>`;
+      return `<div class="hitclip-thumb" data-embed="https://www.youtube.com/embed/${vid}?autoplay=1">
+        <img src="https://img.youtube.com/vi/${vid}/mqdefault.jpg" alt="${escapeAttr(item.label || '')}">
+        <div class="hitclip-play">&#9654;</div>
+      </div>`;
+    }
+
+    case 'song': {
+      const spotify = extractSpotifyId(item.src);
+      if (spotify) {
+        return `<div class="hitclip-thumb" data-embed="https://open.spotify.com/embed/${spotify.type}/${spotify.id}?theme=0">
+          <div class="hitclip-link-card" style="background:#1a1a1a;color:#1db954">
+            <span style="font-size:28px">&#9835;</span>
+            <span class="hitclip-link-label" style="color:#ccc">${escapeHtml(item.label || 'spotify')}</span>
+          </div>
+          <div class="hitclip-play">&#9654;</div>
+        </div>`;
+      }
+      return `<div class="hitclip-link-card" style="background:#f50;color:#fff">
+        <span style="font-size:28px">&#9835;</span>
+        <span class="hitclip-link-label">${escapeHtml(item.label || getDomain(item.src))}</span>
+      </div>`;
+    }
+
+    case 'link':
+    default: {
+      const domain = getDomain(item.src || '');
+      return `<div class="hitclip-link-card">
+        <img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=32" alt="">
+        <span class="hitclip-link-domain">${escapeHtml(domain)}</span>
+        <span class="hitclip-link-label">${escapeHtml(item.label || '')}</span>
+      </div>`;
+    }
+  }
+}
+
+// render media as a simple grid
+function renderMediaShelf(aura) {
+  const items = getMediaItems(aura);
+  if (items.length === 0) return '';
+
+  let html = `<div class="media-grid">`;
+  for (const item of items) {
+    const openSrc = (item.type === 'image' || item.type === 'gif') ? mediaSrc(item) : item.src;
+    const clickAction = (item.type === 'image' || item.type === 'gif' || item.type === 'link')
+      ? `onclick="window.open('${escapeAttr(openSrc || '')}', '_blank')"`
+      : '';
+    html += `<div class="media-item" data-type="${item.type}" ${clickAction}>`;
+    html += `<div class="media-item-frame">${renderHitclipContent(item)}</div>`;
+    html += `</div>`;
+  }
+  html += `</div>`;
+  return html;
 }
 
 // api
@@ -160,13 +267,8 @@ async function openDetail(id) {
     html += `<div class="detail-description">${escapeHtml(currentAura.description)}</div>`;
   }
 
-  if (currentAura.images && currentAura.images.length > 0) {
-    html += `<div class="detail-images">`;
-    for (const imgId of currentAura.images) {
-      html += `<img src="${imageUrl(imgId)}" alt="" loading="lazy" onclick="window.open(this.src, '_blank')">`;
-    }
-    html += `</div>`;
-  }
+  // hitclip shelf replaces old image gallery
+  html += renderMediaShelf(currentAura);
 
   if (currentAura.colors && currentAura.colors.length > 0) {
     html += `<div class="detail-section-title">palette</div>`;
@@ -202,6 +304,17 @@ async function openDetail(id) {
   detailContent.innerHTML = html;
   showView(detailView);
 
+  // lazy embed click-to-play
+  detailContent.querySelectorAll('.hitclip-thumb[data-embed]').forEach(thumb => {
+    thumb.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const src = thumb.dataset.embed;
+      const frame = thumb.closest('.media-item-frame');
+      frame.innerHTML = `<iframe src="${src}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    });
+  });
+
+  // palette copy
   detailContent.querySelectorAll('.palette-item').forEach(item => {
     item.addEventListener('click', () => {
       const hex = item.dataset.hex;
@@ -213,6 +326,7 @@ async function openDetail(id) {
     });
   });
 
+  // tag click
   detailContent.querySelectorAll('.tag').forEach(tag => {
     tag.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -222,6 +336,7 @@ async function openDetail(id) {
     });
   });
 
+  // delete
   document.getElementById('delete-aura-btn').addEventListener('click', async () => {
     if (!confirm('delete this aura?')) return;
     try {
@@ -243,40 +358,74 @@ function openEditor(aura) {
   editorDescription.value = aura ? aura.description || '' : '';
   editorTags.value = aura ? (aura.tags || []).join(', ') : '';
   editorNotes.value = aura ? aura.notes || '' : '';
-  editorImages = aura ? [...(aura.images || [])] : [];
+  editorMedia = aura ? getMediaItems(aura).map(m => ({...m})) : [];
   editorHeroImage = aura ? aura.heroImage || null : null;
   editorLinks = aura ? [...(aura.links || [])] : [];
   editorColors = aura ? (aura.colors || []).map(c => ({...c})) : [];
-  renderEditorImages();
+  renderEditorMedia();
   renderEditorLinks();
   renderEditorColors();
   showView(editorView);
 }
 
-function renderEditorImages() {
-  editorImageGrid.innerHTML = editorImages.map(id => `
-    <div class="editor-thumb-wrapper ${id === editorHeroImage ? 'hero' : ''}" data-id="${id}">
-      <img src="${imageUrl(id)}" alt="">
-      <button type="button" class="editor-thumb-remove" data-id="${id}">&times;</button>
-    </div>
-  `).join('');
+function renderEditorMedia() {
+  editorImageGrid.innerHTML = editorMedia.map((item, i) => {
+    const isHero = (item.type === 'image' || item.type === 'gif') && item.id === editorHeroImage;
+    let thumb;
+    if (item.type === 'image' || item.type === 'gif') {
+      thumb = `<img src="${imageUrl(item.id)}" alt="">`;
+    } else if (item.type === 'video') {
+      const vid = extractYoutubeId(item.src);
+      thumb = vid
+        ? `<img src="https://img.youtube.com/vi/${vid}/mqdefault.jpg" alt="">`
+        : `<img src="" alt="video">`;
+    } else {
+      thumb = `<div style="width:100%;height:100%;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--text-faint)">${item.type}</div>`;
+    }
+    return `
+      <div class="editor-thumb-wrapper ${isHero ? 'hero' : ''}" data-index="${i}">
+        ${thumb}
+        <span class="media-type-icon">${item.type}</span>
+        <button type="button" class="editor-thumb-remove" data-index="${i}">&times;</button>
+      </div>
+    `;
+  }).join('');
 
   editorImageGrid.querySelectorAll('.editor-thumb-wrapper').forEach(wrapper => {
-    wrapper.querySelector('img').addEventListener('click', () => {
-      editorHeroImage = wrapper.dataset.id;
-      renderEditorImages();
-    });
+    const idx = parseInt(wrapper.dataset.index);
+    const item = editorMedia[idx];
+    // click to set hero (only for images/gifs)
+    if (item.type === 'image' || item.type === 'gif') {
+      wrapper.querySelector('img')?.addEventListener('click', () => {
+        editorHeroImage = item.id;
+        renderEditorMedia();
+      });
+    }
   });
 
   editorImageGrid.querySelectorAll('.editor-thumb-remove').forEach(btn => {
-    btn.addEventListener('click', async (e) => {
+    btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const id = btn.dataset.id;
-      editorImages = editorImages.filter(i => i !== id);
-      if (editorHeroImage === id) editorHeroImage = editorImages[0] || null;
-      renderEditorImages();
+      const idx = parseInt(btn.dataset.index);
+      const removed = editorMedia[idx];
+      editorMedia.splice(idx, 1);
+      if (removed.id === editorHeroImage) {
+        const firstImg = editorMedia.find(m => m.type === 'image' || m.type === 'gif');
+        editorHeroImage = firstImg ? firstImg.id : null;
+      }
+      renderEditorMedia();
     });
   });
+}
+
+function handleAddMediaUrl() {
+  const input = document.getElementById('editor-media-url-input');
+  const url = (input.value || '').trim();
+  if (!url) return;
+  const type = detectMediaType(url);
+  editorMedia.push({ type, id: generateId(), src: url, label: '' });
+  input.value = '';
+  renderEditorMedia();
 }
 
 function renderEditorLinks() {
@@ -345,13 +494,19 @@ async function handleSave() {
   const name = editorName.value.trim();
   if (!name) return alert('name is required');
 
+  // derive images[] from media for backward compat
+  const imageIds = editorMedia
+    .filter(m => (m.type === 'image' || m.type === 'gif') && m.id)
+    .map(m => m.id);
+
   const aura = {
     id: editingAura ? editingAura.id : slugify(name),
     name,
     description: editorDescription.value.trim(),
     tags: editorTags.value.split(',').map(t => t.trim()).filter(Boolean),
     heroImage: editorHeroImage,
-    images: editorImages,
+    images: imageIds,
+    media: editorMedia.filter(m => m.id),
     links: editorLinks.filter(l => l.url.trim()),
     colors: editorColors.filter(c => c.hex.trim()),
     notes: editorNotes.value.trim(),
@@ -438,14 +593,17 @@ editorImageUpload.addEventListener('change', async (e) => {
   if (!file) return;
   try {
     const result = await uploadImage(file);
-    editorImages.push(result.id);
+    const type = file.type === 'image/gif' ? 'gif' : 'image';
+    editorMedia.push({ type, id: result.id, src: null, label: '' });
     if (!editorHeroImage) editorHeroImage = result.id;
-    renderEditorImages();
+    renderEditorMedia();
   } catch (err) {
     alert('upload failed: ' + err.message);
   }
   editorImageUpload.value = '';
 });
+
+document.getElementById('add-media-url-btn').addEventListener('click', handleAddMediaUrl);
 
 // init
 

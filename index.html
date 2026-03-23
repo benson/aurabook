@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://bensonperry.com/aurabook">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="https://bensonperry.com/shared/common.css">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <div class="container">
@@ -65,11 +65,15 @@
         </label>
         <div class="editor-images">
           <div class="editor-images-header">
-            <span>images</span>
+            <span>media</span>
             <label class="text-btn upload-btn">
               [+ upload]
-              <input type="file" id="editor-image-upload" accept="image/*" hidden>
+              <input type="file" id="editor-image-upload" accept="image/*,image/gif" hidden>
             </label>
+          </div>
+          <div class="editor-media-url-row">
+            <input type="text" id="editor-media-url-input" placeholder="paste url (youtube, spotify, any link)">
+            <button type="button" id="add-media-url-btn" class="text-btn">[+ add]</button>
           </div>
           <p class="hint">click an image to set as hero</p>
           <div id="editor-image-grid" class="editor-image-grid"></div>
@@ -97,6 +101,6 @@
 
   </div>
 
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>
