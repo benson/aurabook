@@ -5,3 +5,7 @@ compatibility_date = "2024-01-01"
 [[kv_namespaces]]
 binding = "AURAS"
 id = "abec37ee4362487d89ed2af71854b052"
+
+[[r2_buckets]]
+binding = "IMAGES_BACKUP"
+bucket_name = "aurabook-images"

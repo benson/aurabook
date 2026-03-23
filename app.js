@@ -1,4 +1,4 @@
-const API_URL = 'https://aurabook-api.brostar.workers.dev';
+const API_URL = 'https://aurabook-api.bensonperry.workers.dev';
 
 // state
 let auras = [];

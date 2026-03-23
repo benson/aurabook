@@ -242,10 +242,14 @@ async function handleTelegram(request, env) {
     return new Response('ok');
   }
 
-  // Store image in KV
+  // Store image in KV + R2 backup
   const imageId = generateId();
   await env.AURAS.put(`img:${imageId}`, fileData.buffer, {
     metadata: { contentType: fileData.contentType, size: fileData.buffer.byteLength },
+  });
+  await env.IMAGES_BACKUP.put(`${imageId}.${fileData.contentType.split('/')[1] || 'jpg'}`, fileData.buffer, {
+    httpMetadata: { contentType: fileData.contentType },
+    customMetadata: { imageId, uploadedAt: new Date().toISOString() },
   });
 
   // Get current auras list
@@ -608,6 +612,10 @@ export default {
         const id = generateId();
         await env.AURAS.put(`img:${id}`, buffer, {
           metadata: { contentType, size: buffer.byteLength },
+        });
+        await env.IMAGES_BACKUP.put(`${id}.${contentType.split('/')[1] || 'jpg'}`, buffer, {
+          httpMetadata: { contentType },
+          customMetadata: { imageId: id, uploadedAt: new Date().toISOString() },
         });
 
         return json({ id }, 200, request);
