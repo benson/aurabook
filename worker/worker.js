@@ -309,7 +309,17 @@ async function handleTelegram(request, env) {
       await sendMessage(chatId, `added to ${addedNames} ✓`, botToken, keyboard);
       return new Response('ok');
     }
-    // caption didn't match any aura — treat as a hint for classification
+    // caption didn't match any existing aura — offer to create it
+    const queueId = crypto.randomUUID().slice(0, 8);
+    await env.AURAS.put(`queue:${queueId}`, JSON.stringify({
+      imageId, suggestedAura: null, caption, chatId, createdAt: new Date().toISOString(),
+    }));
+    const keyboard = [
+      [{ text: `✓ create "${caption}"`, callback_data: `create:${queueId}:${caption}` }],
+      [{ text: '→ assign to existing', callback_data: `reassign:${queueId}` }, { text: '✗ reject', callback_data: `reject:${queueId}` }],
+    ];
+    await sendMessage(chatId, `no aura named "${caption}" — create it?`, botToken, keyboard);
+    return new Response('ok');
   }
 
   // --- Auto-classify with Claude ---
